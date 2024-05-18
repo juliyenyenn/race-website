@@ -602,6 +602,10 @@ video {
   margin-bottom: 3rem;
 }
 
+.mb-14{
+  margin-bottom: 4rem;
+}
+
 .mb-6{
   margin-bottom: 1.5rem;
 }
@@ -651,6 +655,10 @@ video {
   width: 50%;
 }
 
+.w-40p{
+  width: 40%;
+}
+
 .w-2\/3{
   width: 66.666667%;
 }
@@ -683,6 +691,10 @@ video {
   scroll-margin-top: 5rem;
 }
 
+.scroll-mt-18{
+  scroll-margin-top: 4.5rem;
+}
+
 .list-none{
   list-style-type: none;
 }
@@ -697,6 +709,10 @@ video {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.gap-18{
+  gap: 9rem;
 }
 
 .gap-12{

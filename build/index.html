@@ -6,6 +6,7 @@
     <title>RACE | Homepage</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
     <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
         <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
@@ -19,38 +20,41 @@
                     <a href="#contact" class="hover:opacity-70 text-mydefault">CONTACT US</a>
                     <a href="adminlogin.html" class="hover:opacity-70 text-mydefault">ADMIN</a>
                 </nav>
-
             </div>
         </section>
+        
     </header>
 
-    <main class="h-[479px] w-full bg-cover bg-center relative">
-        <img src="img/cover.gif" class="w-full h-full object-cover absolute">
-        <div class="p-[75px]">
-            <h1 class="leading-[70px] text-[78px] max-w-[550px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
-                ROOM AVAILABILITY for CLASSES and EXAMS
-            </h1>
-            <p class="text-[17px] max-w-[550px] relative montserrat-black text-orange-100 drop-shadow-4xl mt-12 -mb-10">
-                Checking for available rooms in CSM made easy for you!
-            </p>
-        </div>
-    </main>
+    <main class="bg-cover bg-center relative">
+        <section id="racecover"
+            class="widescreen:section-min-height tallscreen:section-min-height">
+            <img src="img/cover.gif" class="absolute">
+            <div class="p-[75px]">
+                <h1 class="leading-[70px] text-[78px] max-w-[550px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
+                    ROOM AVAILABILITY for CLASSES and EXAMS
+                </h1>
+                <p class="text-[17px] max-w-[550px] relative montserrat-black text-orange-100 drop-shadow-4xl mt-12 -mb-10">
+                    Checking for available rooms in CSM made easy for you!
+                </p>
+            </div>
+        </section>
+    </main><br><br>
 
-        <section id="rooms" class="p-6 my-12 scroll-mt-20 max-w-[1000px] mx-auto montserrat-black">
-            <h2 class="mt-5 text-4xl font-bold text-center sm:text-5xl mb-6 text-orange-950 dark:text-white">
+        <section id="rooms" class="p-6 my-12 scroll-mt-18 max-w-[1000px] mx-auto montserrat-black widescreen:section-min-height tallscreen:section-min-height">
+            <h2 class="mt-5 text-4xl font-bold text-center sm:text-5xl mb-14 text-orange-950 dark:text-white">
                 CHECK ROOMS IN:
             </h2>
-            <ul class="list-none mx-auto my-5 flex flex-col sm:flex-row items-center gap-12">
+            <ul class="mx-auto list-none my-5 flex flex-col sm:flex-row items-center gap-18">
                 <!--1st Card-->
-                <li 
-                    class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
-                    <img src="img/1floor.png" alt="1st Floor" class="w-1/2 mb-6">
+                <a href="rooms.html"><li 
+                    class="sm:w-2/3 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 rounded-3xl shadow-xl">
+                    <img src="img/1floor.png" alt="1st Floor" class="w-40p mb-6">
                     <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">FIRST FLOOR</h3>
-                </li>
+                </li></a>
                 <!--2nd Card-->
                 <li 
-                    class="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
-                    <img src="img/2floor.png" alt="2nd Floor" class="w-1/2 mb-6">
+                    class="sm:w-2/3 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
+                    <img src="img/2floor.png" alt="2nd Floor" class="w-40p mb-6">
                     <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">SECOND FLOOR</h3>
                 </li>
 
@@ -60,7 +64,7 @@
         <hr class="mx-auto bg-gray-500 h-[1.5px]  dark:bg-white w-1/2">
 
         <section id="contact"
-            class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height montserrat-black">
+            class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height montserrat-black widescreen:section-min-height tallscreen:section-min-height">
             <h2 class="mb-12 text-4xl font-bold text-center sm:text-5xl text-orange-950 dark:text-white">
                 CONTACT US
             </h2>
