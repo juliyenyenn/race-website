@@ -46,11 +46,11 @@
 }
 
 .mt-neg20 {
-  margin-top: -23px;
+  margin-top: -21px;
 }
 
 .mt-neg90 {
-  margin-top: -92px;
+  margin-top: -89px;
 }
 
 .mt-neg100 {
@@ -82,7 +82,7 @@
 }
 
 .ml-25 {
-  margin-left: 57px;
+  margin-left: 59px;
 }
 
 .ml-20 {
@@ -133,7 +133,12 @@
   margin-left: -3px;
 }
 
-
+.opt:hover{
+  border: rgb(69 10 10 / var(--tw-bg-opacity));
+  border-width: 3px;
+  background-color: #f9f0df;
+  border-style: solid;
+}
 
 
 /* CSS for tooltip */
@@ -142,7 +147,7 @@
 }
 .wrapper .icon{
   margin-left: 35px;
-  margin-top: 85px;
+  margin-top: 82px;
   text-align: center;
   cursor: pointer;
   display: flex;
@@ -213,6 +218,7 @@
 .wrapper .flask-vial:hover .tooltip:before{
   background: #3B5999;
 }
+/* end of CSS for tooltip */
 
 html,
 :host {
