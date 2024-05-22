@@ -81,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="mt-3">
                 <label for="username" class="block text-base mb-2">Username</label>
                 <input type="text" id="username" name ="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
-                <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $userErr;?> </span></div>
+                <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $userErr;?> </span>
             </div>
             < class="mt-3">
                 <label for="password" class="block text-base mb-2">Password</label>
