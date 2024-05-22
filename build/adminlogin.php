@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "race";
+$db = "racedbms"; //database name
 $username = $password = $userErr = $passErr = $userpassErr="";
 
 $data = new mysqli($host, $user, $pass, $db);
@@ -87,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label for="password" class="block text-base mb-2">Password</label>
                 <input type="password" id="password" name="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
                 <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $passErr;?> </span>
-                <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $userpassErr;?></span>
+                <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $userpassErr;?> </span>
             </div>
             <div class="mt-3 flex justify-between items-center">
                 <div>
