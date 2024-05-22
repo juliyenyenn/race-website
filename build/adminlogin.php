@@ -29,10 +29,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql="select * from administator where Username= '".$username."' AND Password='".$password."' "; 
     
     $result = mysqli_query($data,$sql);
-
     $row=mysqli_fetch_array($result);
 
     if($row==true){
+        $_SESSION["username"] = $username;
         header("location:adminhometest.php");
     }
     if($username == true && $password == true && $row == false){
