@@ -1,4 +1,47 @@
-<!--rawr-->
+<?php
+
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "race";
+$username = $password = $userErr = $passErr = $userpassErr="";
+
+$data = new mysqli($host, $user, $pass, $db);
+if($data == false){
+    die("Connection Error: " . mysqli_connect_error());
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["username"])){
+        $userErr = "*Username is required.";
+    }
+    else{
+        $username = $_POST["username"];
+    }
+    if(empty($_POST["password"])){
+        $passErr = "*Password is required.";
+    }
+    else{
+        $password = $_POST["password"];
+    }
+    
+
+    $sql="select * from administrator where Username= '".$username."' AND Password='".$password."' "; // Check if administrator is spelled correctly in database
+    
+    $result = mysqli_query($data,$sql);
+
+    $row=mysqli_fetch_array($result);
+
+    if($row==true){
+        header("location:adminhometest.php");
+    }
+    if($username == true && $password == true && $row == false){
+        $userpassErr = "Username does not match with password!";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,17 +73,21 @@
     </header>
     <br><br><br>
 
+    <form action="" method="POST">
     <div class="flex justify-center items-center montserrat-black">
         <div class="w-96 p-6 shadow-lg bg-white rounded-md">
             <h1 class="text-2xl block text-center font-semibold"><i class="fa-solid fa-user text-orange-950"></i> Login as Admin</h1>
             <hr class="mt-3">
             <div class="mt-3">
                 <label for="username" class="block text-base mb-2">Username</label>
-                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
+                <input type="text" id="username" name ="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
+                <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $userErr;?> </span></div>
             </div>
-            <div class="mt-3">
+            < class="mt-3">
                 <label for="password" class="block text-base mb-2">Password</label>
-                <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
+                <input type="password" id="password" name="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
+                <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $passErr;?> </span>
+                <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $userpassErr;?></span>
             </div>
             <div class="mt-3 flex justify-between items-center">
                 <div>
@@ -57,6 +104,7 @@
             </div>
         </div>
     </div>
+    </form>
 
     
 </body>
