@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "race";
+$db = "racedbms"; //database name
 $username = $password = $userErr = $passErr = $userpassErr="";
 
 $data = new mysqli($host, $user, $pass, $db);
