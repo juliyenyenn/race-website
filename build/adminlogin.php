@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
 
-    $sql="select * from administrator where Username= '".$username."' AND Password='".$password."' "; // Check if administrator is spelled correctly in database
+    $sql="select * from administator where Username= '".$username."' AND Password='".$password."' "; // Check if administrator is spelled correctly in database
     
     $result = mysqli_query($data,$sql);
 
