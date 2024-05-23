@@ -26,17 +26,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
 
-    $sql="select * from administator where Username= '".$username."' AND Password='".$password."' "; 
-    
+    $sql="select * from administator where Username= '".$username."' AND Password='".$password."'";
+    $sqlUser = mysqli_query($data, "select * from administator where Username= '".$username."'");
     $result = mysqli_query($data,$sql);
     $row=mysqli_fetch_array($result);
 
-    if($row==true){
-        $_SESSION["username"] = $username;
-        header("location:adminhometest.php");
+    if(mysqli_num_rows($sqlUser) > 0){
+        
+        if($row){
+            $_SESSION["username"] = $username;
+            header("location:adminhometest.php");
+            exit;
+        }
+        else{
+            $userpassErr = "Username does not match with password!";
+        }
     }
-    if($username == true && $password == true && $row == false){
-        $userpassErr = "Username does not match with password!";
+    else{
+            $userpassErr = "User not found!";
     }
 }
 
