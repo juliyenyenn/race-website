@@ -10,7 +10,7 @@
 <?php
 session_start();
 $name="";
- $uname = $_SESSION["username"];
+$uname = $_SESSION["username"];
 
 switch ($uname) {
     case "graysee":

@@ -70,9 +70,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a href="index.html" class="hover:opacity-70 text-mydefault"> ROOMS</a>
-                    <a href="index.html" class="hover:opacity-70 text-mydefault">CONTACT US</a>
-                    <a href="adminlogin.html" class="hover:opacity-70 text-mydefault">ADMIN</a>
+                    <a href="index.php" class="hover:opacity-70 text-mydefault"> ROOMS</a>
+                    <a href="index.php" class="hover:opacity-70 text-mydefault">CONTACT US</a>
+                    <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
                 </nav>
 
             </div>
