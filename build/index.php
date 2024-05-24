@@ -46,7 +46,7 @@
             </h2>
             <ul class="mx-auto list-none my-5 flex flex-col sm:flex-row items-center gap-18">
                 <!--1st Card-->
-                <a href="rooms.html"><li 
+                <a href="rooms.php"><li 
                     class="opt sm:w-2/3 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 rounded-3xl shadow-xl">
                     <img src="img/1floor.png" alt="1st Floor" class="w-40p mb-6">
                     <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">FIRST FLOOR</h3>
