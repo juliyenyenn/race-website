@@ -31,7 +31,7 @@
             <div class="p-[75px]">
                 <h1 class="leading-[70px] text-[78px] max-w-[550px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
                     ROOM AVAILABILITY for CLASSES and EXAMS
-                </h1>
+                </h1><br>
                 <p class="text-[17px] max-w-[550px] relative montserrat-black text-orange-100 drop-shadow-4xl mt-12 -mb-10">
                     Checking for available rooms in CSM made easy for you!
                 </p>

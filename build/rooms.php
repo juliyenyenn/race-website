@@ -46,12 +46,12 @@
             <section id="racecover"
                 class="widescreen:section-min-height tallscreen:section-min-height">
 
-                <img src="img/firstfloor.png" class="absolute">
+                <img src="img/csmfirstfloor.png" class="absolute">
                 <div class="relative">
                 
                 <!--First Row Rooms-->
                 <section>
-                    <div class="wrapper">
+                    <div style="margin-top: 57px;" class="wrapper">
                         <div class="icon lab" data-room-key="Room127">
                            <div class="tooltip">
                               ROOM 127
@@ -154,7 +154,7 @@
                 <!--Second Row Rooms-->
 
                 <section>
-                    <div class="wrapper mt-50 ml-70">
+                    <div style="margin-top: 53px;" class="wrapper ml-70">
                         <div class="icon lab">
                            <div class="tooltip">
                               MOLBIO LAB
