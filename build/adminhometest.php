@@ -30,7 +30,7 @@ switch ($uname) {
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
     <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
         <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-            <a href="#"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
+            <a href="index.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
             <div>
                 <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
                     &#9776;
@@ -47,7 +47,7 @@ switch ($uname) {
         <h1>ADMIN HOMEPAGE!</h1>
         <h1>Welcome, 
             <?php echo $name?>!</h1>
-        <a href ="logoutTest.php">Logout</a>
+        <a href ="adminlogin.php">Logout</a>
 </body>
 
 

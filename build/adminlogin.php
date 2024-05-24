@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
     <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
         <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-            <a href="index.html"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
+            <a href="index.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
             <div>
                 <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
                     &#9776;
@@ -78,28 +78,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </section>
     </header>
-    <br><br><br>
 
-    <form action="" method="POST">
+    <section id="racecover"
+            class="widescreen:section-min-height tallscreen:section-min-height">
+            <img src="img/admincover.gif" class="absolute">
+    </section>
+
+    <div style="padding: 53px;"></div>
+
+    <form action="" method="POST" class="relative">
+
+
     <div class="flex justify-center items-center montserrat-black">
         <div class="w-96 p-6 shadow-lg bg-white rounded-md">
             <h1 class="text-2xl block text-center font-semibold"><i class="fa-solid fa-user text-orange-950"></i> Login as Admin</h1>
             <hr class="mt-3">
             <div class="mt-3">
-                <label for="username" class="block text-base mb-2">Username</label>
+                <label for="username" class="block text-base mb-2">Username:</label>
                 <input type="text" id="username" name ="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
                 <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $userErr;?> </span>
             </div>
             <div class="mt-3">
-                <label for="password" class="block text-base mb-2">Password</label>
+                <label for="password" class="block text-base mb-2">Password:</label>
                 <input type="password" id="password" name="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
                 <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $passErr;?> </span>
                 <span style="font-style: italic; color: red;font-size: 10px;"><?php echo $userpassErr;?> </span>
             </div>
             <div class="mt-3 flex justify-between items-center">
                 <div>
-                    <input type="checkbox">
-                    <label>Remember Me</label>
+                    <input style="height: 11px" type="checkbox">
+                    <label style="font-size: 13px">Remember Me</label>
                 </div>
             </div>
             <div class="mt-5 text-center">
@@ -109,6 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
     </div>
     </form>
+
 
     
 </body>

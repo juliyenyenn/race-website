@@ -23,12 +23,11 @@
             </div>
         </section>
         
-    </header>
+    </header>   
 
-    <main class="bg-cover bg-center relative">
         <section id="racecover"
             class="widescreen:section-min-height tallscreen:section-min-height">
-            <img src="img/cover.gif" class="absolute">
+            <img src="img/homepagecover.gif" class="absolute">
             <div class="p-[75px]">
                 <h1 class="leading-[70px] text-[78px] max-w-[550px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
                     ROOM AVAILABILITY for CLASSES and EXAMS
@@ -38,7 +37,7 @@
                 </p>
             </div>
         </section>
-    </main><br><br>
+        <br><br><br><br><br><br>
 
         <section id="rooms" class="p-6 my-12 scroll-mt-18 max-w-[1000px] mx-auto montserrat-black widescreen:section-min-height tallscreen:section-min-height">
             <h2 class="mt-5 text-4xl font-bold text-center sm:text-5xl mb-14 text-orange-950 dark:text-white">
