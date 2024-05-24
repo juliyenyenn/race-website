@@ -6,6 +6,22 @@
     <title>ROOMS | 1st Floor</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.icon').click(function(){
+                var roomKey = $(this).data('room-key');
+                $.ajax({
+                    url: 'fetch_rooms.php',
+                    type: 'GET',
+                    data: { room_key: roomKey },
+                    success: function(response) {
+                        $('#room-details').html(response);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
@@ -36,7 +52,7 @@
                 <!--First Row Rooms-->
                 <section>
                     <div class="wrapper">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room127">
                            <div class="tooltip">
                               ROOM 127
                            </div>
@@ -44,7 +60,7 @@
                     </div>
 
                     <div class="wrapper ml-10">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room126">
                            <div class="tooltip">
                               ROOM 126
                            </div>
@@ -52,7 +68,7 @@
                     </div>
 
                     <div class="wrapper ml-7">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room125">
                            <div class="tooltip">
                               ROOM 125
                            </div>
@@ -60,7 +76,7 @@
                     </div>
 
                     <div class="wrapper ml-10">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room122">
                            <div class="tooltip">
                               ROOM 122
                            </div>
@@ -68,7 +84,7 @@
                     </div>
 
                     <div class="wrapper ml-18">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room120">
                            <div class="tooltip">
                               ROOM 120
                            </div>
@@ -76,7 +92,7 @@
                     </div>
 
                     <div class="wrapper ml-5">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room118">
                            <div class="tooltip">
                               ROOM 118
                            </div>
@@ -84,7 +100,7 @@
                     </div>
 
                     <div class="wrapper ml-50">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room112">
                            <div class="tooltip">
                               ROOM 112
                            </div>
@@ -92,7 +108,7 @@
                     </div>
 
                     <div class="wrapper ml-10">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room110">
                            <div class="tooltip">
                               ROOM 110
                            </div>
@@ -100,7 +116,7 @@
                     </div>
 
                     <div class="wrapper ml-20">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room108">
                            <div class="tooltip">
                               ROOM 108
                            </div>
@@ -108,7 +124,7 @@
                     </div>
 
                     <div class="wrapper ml-10">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room106">
                            <div class="tooltip">
                               ROOM 106
                            </div>
@@ -116,7 +132,7 @@
                     </div>
 
                     <div class="wrapper ml-10">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room104">
                            <div class="tooltip">
                               ROOM 104
                            </div>
@@ -124,7 +140,7 @@
                     </div>
 
                     <div class="wrapper ml-7">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room102">
                            <div class="tooltip">
                               ROOM 102
                            </div>
@@ -157,7 +173,7 @@
                     </div>
 
                     <div class="wrapper mt-50 ml-90">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room119">
                            <div class="tooltip">
                               ROOM 119
                            </div>
@@ -166,7 +182,7 @@
                     </div>
 
                     <div class="wrapper mt-50 ml-3">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room117">
                            <div class="tooltip">
                               ROOM 117
                            </div>
@@ -175,7 +191,7 @@
                     </div>
 
                     <div class="wrapper mt-50 ml-25">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room113">
                            <div class="tooltip">
                               ROOM 113
                            </div>
@@ -184,7 +200,7 @@
                     </div>
 
                     <div class="wrapper mt-50 ml-neg15">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room111">
                            <div class="tooltip">
                               ROOM 111
                            </div>
@@ -195,7 +211,7 @@
 
                 <section>
                     <div class="wrapper mt-neg100 ml-neg">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room128">
                            <div class="tooltip">
                               ROOM 128
                            </div>
@@ -204,7 +220,7 @@
                     </div>
 
                     <div class="wrapper mt-neg100 ml-150">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room121">
                            <div class="tooltip">
                               ROOM 121
                            </div>
@@ -231,7 +247,7 @@
                     </div>
 
                     <div class="wrapper mt-neg100 ml-neg8">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room107">
                            <div class="tooltip">
                               ROOM 107
                            </div>
@@ -240,7 +256,7 @@
                     </div>
 
                     <div class="wrapper mt-neg100 ml-3">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room105">
                            <div class="tooltip">
                               ROOM 105
                            </div>
@@ -249,7 +265,7 @@
                     </div>
 
                     <div class="wrapper mt-neg100 ml-neg5">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room103">
                            <div class="tooltip">
                               ROOM 103
                            </div>
@@ -280,7 +296,7 @@
 
                 <section>
                     <div class="wrapper mt-neg20 ml-30">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room132">
                            <div class="tooltip">
                               ROOM 132
                            </div>
@@ -288,15 +304,10 @@
                         </div>
                     </div>
                 </section>
-
-
-                
-
             </section>
         </main>
 
-
-
+        <div id="room-details" class="mt-10"></div>
 
     </body>
 </html>
