@@ -200,20 +200,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="idprof">Professor ID:</label>
         <input id="type_text" type="text" name="idprof" id="idprof" placeholder="Ex: MCSGuillermo" required><br>
 
-        <label for="profname">Professor Name:</label>
-        <input id="type_text" type="text" name="profname" id="profname" placeholder="Ex: Miguel Carlo S. Guillermo" required><br>
-
-        <label for="profdept" class="block mb-2 text-gray-900 dark:text-white">Professor Department:</label>
-        <select id="profdept" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-30 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Select Department</option>
-            <option value="DBSES">DBSES</option>
-            <option value="DFSC">DFSC</option>
-            <option value="DMPCS">DMPCS</option>
-        </select>
-
-        <label for="profemail">Professor Email:</label>
-        <input id="type_text" type="text" name="profemail" id="profemail" placeholder="Ex: msguillermo2@up.edu.ph" required><br>
-
         <input id="type_submit" type="submit" value="Add Schedule">
     </form><br><br><br>
 
