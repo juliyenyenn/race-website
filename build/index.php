@@ -18,9 +18,9 @@
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a style="font-family: Montserrat; font-weight:bold" href="#rooms" class="hover:opacity-70 text-mydefault"> ROOMS</a>
-                    <a style="font-family: Montserrat; font-weight:bold" href="#aboutus" class="hover:opacity-70 text-mydefault">ABOUT US</a>
-                    <a style="font-family: Montserrat; font-weight:bold"href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
+                    <a style="font-family: Montserrat;" href="#rooms" class="hover:opacity-70 text-mydefault"> ROOMS</a>
+                    <a style="font-family: Montserrat;" href="#aboutus" class="hover:opacity-70 text-mydefault">ABOUT US</a>
+                    <a style="font-family: Montserrat;"href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
                 </nav>
             </div>
         </section>
@@ -83,9 +83,9 @@
                         vitae aliquam dicta! </div>
 
                     <div class="social-links">
-                        <a href="https://www.facebook.com/julienebontilao/"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/juliyenyenn/"><i class="fa fa-instagram"></i></a>
-                        <a href="https://github.com/juliyenyenn"><i class="fa fa-github"></i></a>
+                        <a href="https://www.facebook.com/julienebontilao/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/juliyenyenn/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/juliyenyenn" target="_blank"><i class="fa fa-github"></i></a>
                     </div>
                 </div>
 
@@ -98,9 +98,9 @@
                         vitae aliquam dicta! </div>
 
                     <div class="social-links">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/kristiannaaamazo/"><i class="fa fa-instagram"></i></a>
-                        <a href="https://github.com/krimazo"><i class="fa fa-github"></i></a>
+                        <a href="https://www.facebook.com/kristianna.mazo" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kristiannaaamazo/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/krimazo" target="_blank"><i class="fa fa-github"></i></a>
                     </div>
                 </div>
 
@@ -113,9 +113,9 @@
                         vitae aliquam dicta! </div>
 
                     <div class="social-links">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/gracieabot_/"><i class="fa fa-instagram"></i></a>
-                        <a href="https://github.com/gracie630"><i class="fa fa-github"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100008427468918" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/gracieabot_/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/gracie630" target="_blank"><i class="fa fa-github"></i></a>
                     </div>
                 </div>
             </div>
