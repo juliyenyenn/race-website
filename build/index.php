@@ -18,9 +18,9 @@
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a href="#rooms" class="hover:opacity-70 text-mydefault"> ROOMS</a>
-                    <a href="#aboutus" class="hover:opacity-70 text-mydefault">ABOUT US</a>
-                    <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
+                    <a style="font-family: Montserrat; font-weight:bold" href="#rooms" class="hover:opacity-70 text-mydefault"> ROOMS</a>
+                    <a style="font-family: Montserrat; font-weight:bold" href="#aboutus" class="hover:opacity-70 text-mydefault">ABOUT US</a>
+                    <a style="font-family: Montserrat; font-weight:bold"href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
                 </nav>
             </div>
         </section>

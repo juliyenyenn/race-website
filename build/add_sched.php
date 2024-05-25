@@ -8,76 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
-    <style>
-        
-        
-        h2 {
-            color: black;
-            font-size: 24px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .addschedule {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        label {
-            color: black;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        
-        #type_text,#type_text2,
-        textarea {
-            width: 300px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: whitesmoke;
-            color: black;
-        }
-        
-        .type_file {
-            margin-top: 5px;
-            margin-left: 100px;
-        }
-        
-        #type_submit {
-            width: 150px;
-            padding: 10px;
-            background-color:#3D2B1F;
-            color: #F4EEE8;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 30px;
-        }
-        
-        #type_submit:hover {
-            background-color:ForestGreen;
-            color: white;
-        }
-
-        .addsched {
-            font-size: 40px;
-            margin-top: 60px;
-            margin-bottom: 70px;
-        }
-
-        #newmessage {
-            margin-top: 30px;
-            margin-bottom: 35px;
-            text-align: center;
-        }
-    </style>
-
-
 </head>
 
 <?php
@@ -149,8 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 
-<body>
-
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
     <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
         <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
@@ -160,68 +88,84 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a href="add_sched.php" class="hover:opacity-70 text-mydefault">ADD </a>
-                    <a href="updatedelete_sched.php" class="hover:opacity-70 text-mydefault">UPDATE & DELETE </a>
+                    <a style="font-weight: bold; font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
                 </nav>
             </div>
         </section>
-        
     </header>
 
-    <h2 class="addsched">ADD SCHEDULE</h2>
-    <form class="addschedule max-w-sm mx-auto" method="POST" action="add_sched.php">
+    <main class="flex flex-col items-center py-10">
+        <h2 class="text-4xl font-bold text-slate-800 dark:text-gray-200 mb-8">ADD SCHEDULE</h2>
+        <form class="border-[1.5px] border-slate-950 dark:bg-gray-800 shadow-xl rounded-lg p-8 max-w-lg w-full" method="POST" action="add_sched.php">
+            <div class="mb-5">
+                <label for="schedID" class="block mb-2 text-sm font-medium">Schedule ID:</label>
+                <input name="schedID" type="text" id="schedID" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: Room105_sched101" required />
+            </div>
 
-        <label for="section">Schedule ID:</label>
-        <input id="type_text" type="text" name="schedID" id="schedID" placeholder="Ex: Room105_sched101" required><br> <!--required-->
-    
-        <label for="time" class="block mb-2 text-gray-900 dark:text-white">Time:</label>
-        <select id="time" name = "time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-30 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Select Time</option>
-            <option value="7:00AM-8:30AM">7:00AM-8:30AM</option>
-            <option value="7:00AM-10:00AM">7:00AM-10:00AM</option>
-            <option value="8:30AM-11:30AM">8:30AM-11:30AM</option>
-            <option value="10:00AM-11:30AM">10:00AM-11:30AM</option>
-            <option value="10:00AM-1:00PM">10:00AM-1:00PM</option>
-            <option value="11:30AM-1:00PM">11:30AM-1:00PM</option>
-            <option value="1:00PM-2:30PM">1:00PM-2:30PM</option>
-            <option value="1:00PM-4:00PM">1:00PM-4:00PM</option>
-            <option value="2:30PM-4:00PM">2:30PM-4:00PM</option>
-            <option value="4:00PM-5:30PM">4:00PM-5:30PM</option>
-            <option value="4:00PM-7:00PM">4:00PM-7:00PM</option>
-            <option value="5:30PM-7:00PM">5:30PM-7:00PM</option>
-        </select>
+            <div class="mb-5">
+                <label for="time" class="block mb-2 text-sm font-medium">Time:</label>
+                <select id="time" name="time" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500">
+                    <option selected>Select Time</option>
+                    <option value="7:00AM-8:30AM">7:00AM-8:30AM</option>
+                    <option value="7:00AM-10:00AM">7:00AM-10:00AM</option>
+                    <option value="8:30AM-11:30AM">8:30AM-11:30AM</option>
+                    <option value="10:00AM-11:30AM">10:00AM-11:30AM</option>
+                    <option value="10:00AM-1:00PM">10:00AM-1:00PM</option>
+                    <option value="11:30AM-1:00PM">11:30AM-1:00PM</option>
+                    <option value="1:00PM-2:30PM">1:00PM-2:30PM</option>
+                    <option value="1:00PM-4:00PM">1:00PM-4:00PM</option>
+                    <option value="2:30PM-4:00PM">2:30PM-4:00PM</option>
+                    <option value="4:00PM-5:30PM">4:00PM-5:30PM</option>
+                    <option value="4:00PM-7:00PM">4:00PM-7:00PM</option>
+                    <option value="5:30PM-7:00PM">5:30PM-7:00PM</option>
+                </select>
+            </div>
 
-        <label for="day" class="block mb-2 text-gray-900 dark:text-white">Day:</label>
-        <select id="day" name = "day" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-30 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Select Day</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-        </select>
-    
-        <label for="section">Section:</label>
-        <input id="type_text" type="text" name="section" id="section" placeholder="Ex: UV, B, DL" required><br>
+            <div class="mb-5">
+                <label for="day" class="block mb-2 text-sm font-medium">Day:</label>
+                <select id="day" name="day" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500">
+                    <option selected>Select Day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                </select>
+            </div>
 
-        <label for="rmnumber">Room Number:</label>
-        <input id="type_text" type="text" name="rmnumber" id="rmnumber" placeholder="Ex: 105, 125a, 210a" required><br>
+            <div class="mb-5">
+                <label for="section" class="block mb-2 text-sm font-medium">Section:</label>
+                <input name="section" type="text" id="section" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: UV, B, DL" required />
+            </div>
 
-        <label for="idcourse">Course ID:</label>
-        <input id="type_text" type="text" name="idcourse" id="idcourse" placeholder="Ex: BIO 170, AMAT 131, CMSC 127" required><br>
+            <div class="mb-5">
+                <label for="rmnumber" class="block mb-2 text-sm font-medium">Room Number:</label>
+                <input name="rmnumber" type="text" id="rmnumber" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: 105, 125a, 210a" required />
+            </div>
 
-        <label for="idprof">Professor ID:</label>
-        <input id="type_text" type="text" name="idprof" id="idprof" placeholder="Ex: MCSGuillermo" required><br>
-        <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $addErr;?> </span>
-        <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $submitMsg;?> </span>
-        
+            <div class="mb-5">
+                <label for="idcourse" class="block mb-2 text-sm font-medium">Course ID:</label>
+                <input name="idcourse" type="text" id="idcourse" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: BIO 170, AMAT 131, CMSC 127" required />
+            </div>
 
-        <input id="type_submit" type="submit" value="Add Schedule">
-    </form><br><br><br>
+            <div class="mb-5">
+                <label for="idprof" class="block mb-2 text-sm font-medium">Professor ID:</label>
+                <input name="idprof" type="text" id="idprof" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: MCSGuillermo" required />
+            </div>
+
+        <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $addErr;?></span>
+        <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $submitMsg;?></span>
+
+        <div style="display: flex; justify-content: center;">
+            <input style="font-weight: bold;" class="mt-5 w-[45%] bg-gradient-to-br from-red-950 via-red-950 to-yellow-950 text-white p-2.5 rounded-lg hover:bg-gradient-to-br hover:from-red-300 hover:via-red-400 hover:to-yellow-200 cursor-pointer focus:ring-4 focus:ring-red-300" id="type_submit" type="submit" value="ADD SCHEDULE">
+        </div>
+
+    </form>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
-
 </html>
 
+</html>

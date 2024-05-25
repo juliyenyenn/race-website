@@ -38,7 +38,7 @@ switch ($uname) {
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
+                    <a style="font-weight: bolder; font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
                 </nav>
             </div>
         </section>
@@ -50,7 +50,7 @@ switch ($uname) {
             <img src="img/admincover.gif" class="absolute">
             
             <div class="p-[75px]">
-                <h1 style="margin-top:20px; max-width: 700px; line-height: 90px;" class="text-[78px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
+                <h1 style="margin-top:20px; max-width: 700px; line-height: 80px; font-weight:950" class="text-[78px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
                     WELCOME, <?php echo $name?>!
                 </h1><br>
 
@@ -60,13 +60,13 @@ switch ($uname) {
             </div>
 
             <a href="add_sched.php"><button style="margin-left: 75px; font-weight:bold" class="relative inline-flex items-center justify-center p-1 mb-2 me-2 overflow-hidden text-sm font-medium text-red-950 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
-            <span style="font-size:20px" class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#fffaf0] dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            <span style="font-size:18px" class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#fffaf0] dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             ADD SCHEDULE
             </span>
             </button></a>
 
             <a href="updatedelete_sched.php"><button style="margin-left: 40px; font-weight:bold" class="relative inline-flex items-center justify-center p-1 mb-2 me-2 overflow-hidden text-sm font-medium text-red-950 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
-            <span style="font-size:20px" class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#fffaf0] dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            <span style="font-size:18px" class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#fffaf0] dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             UPDATE & DELETE SCHEDULE
             </span>
             </button>
