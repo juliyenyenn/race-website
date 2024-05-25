@@ -22,9 +22,13 @@
             });
         });
     </script>
+
 </head>
 
-<body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
+<body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white relative">
+
+        <!-- Overlay div -->
+      <div id="overlay" class="fixed inset-0 bg-black opacity-70 z-50 hidden"></div>
         <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
             <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
                 <a href="index.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
@@ -308,6 +312,23 @@
         </main>
 
         <div id="room-details" class="mt-10"></div>
+
+    <script>
+    $(document).ready(function(){
+        $('.icon').click(function(){
+            var roomKey = $(this).data('room-key');
+            $.ajax({
+                url: 'fetch_rooms.php',
+                type: 'GET',
+                data: { room_key: roomKey },
+                success: function(response) {
+                    $('#room-details').html(response);
+                    $('#overlay').removeClass('hidden'); // Show overlay
+                }
+            });
+        });
+    });
+    </script>
 
     </body>
 </html>
