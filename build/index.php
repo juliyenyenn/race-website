@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RACE | Homepage</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
@@ -17,7 +19,7 @@
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
                     <a href="#rooms" class="hover:opacity-70 text-mydefault"> ROOMS</a>
-                    <a href="#contact" class="hover:opacity-70 text-mydefault">CONTACT US</a>
+                    <a href="#aboutus" class="hover:opacity-70 text-mydefault">ABOUT US</a>
                     <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
                 </nav>
             </div>
@@ -37,7 +39,7 @@
                 </p>
             </div>
         </section>
-        <br><br><br><br><br><br>
+        <br><br><br><br>
 
         <section id="rooms" class="p-6 my-12 scroll-mt-18 max-w-[1000px] mx-auto montserrat-black widescreen:section-min-height tallscreen:section-min-height">
             <h2 class="mt-5 text-4xl font-bold text-center sm:text-5xl mb-14 text-orange-950 dark:text-white">
@@ -62,25 +64,66 @@
 
         <hr class="mx-auto bg-gray-500 h-[1.5px]  dark:bg-white w-1/2">
 
-        <section id="contact"
-            class="p-6 my-12 scroll-mt-20 widescreen:section-min-height tallscreen:section-min-height montserrat-black widescreen:section-min-height tallscreen:section-min-height">
+        <section id="aboutus"
+            class="p-6 my-12 scroll-mt-18 widescreen:section-min-height tallscreen:section-min-height montserrat-black widescreen:section-min-height tallscreen:section-min-height">
+
+            <div class="container">
+            <div class="header">
             <h2 class="mb-12 text-4xl font-bold text-center sm:text-5xl text-orange-950 dark:text-white">
-                CONTACT US
+                ABOUT US
             </h2>
-            <form action="" class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-left gap-4">
-                <label for="subject" class="text-[22px] font-bold text-orange-950">SUBJECT:</label>
-                <input type="text" id="subject" name="subject" required minlength="3" maxlength="60"
-                    placeholder="Your Subject"
-                    class="w-full text-black text-[20px] sm:text-[15px] pl-3 rounded-xl border border-solid border-slate-900 dark:border-none bg-[#FFFAEF]">
-                <label for="message" class="text-[22px] font-bold text-orange-950">MESSAGE:</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required
-                    class="w-full text-black text-[20px] sm:text-[15px] pl-3 rounded-xl border border-solid border-slate-900 dark:border-none bg-[#FFFAEF]"></textarea>
-                <button
-                    class="bg-red-950 hover:bg-red-900 active:bg-teal-500 text-white p-2 w-32 rounded-xl border border-solid border-slate-900 dark:border-none text-[20px] font-bold">SUBMIT</button>
-            </form>
+            </div>
+            <div class="sub-container">
+                <div class="teams">
+                    <img src="img/juliene.jpg" alt="">
+                    <div class="name">Juliene Airen Bontilao</div>
+                    <div class="desig">Front-end Developer</div>
+                    <div class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore quam
+                        reprehenderit
+                        vitae aliquam dicta! </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/julienebontilao/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/juliyenyenn/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/juliyenyenn"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="teams">
+                    <img src="img/isabel.jpg" alt="">
+                    <div class="name">Kristianna Isabel Mazo</div>
+                    <div class="desig">Back-end Developer</div>
+                    <div class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore quam
+                        reprehenderit
+                        vitae aliquam dicta! </div>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kristiannaaamazo/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/krimazo"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="teams">
+                    <img src="img/gracie.jpg" alt="">
+                    <div class="name">Gracie Anne Abot </div>
+                    <div class="desig">Back-end Developer</div>
+                    <div class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore quam
+                        reprehenderit
+                        vitae aliquam dicta! </div>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/gracieabot_/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/gracie630"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </section>
 
-        <div class="p-16"></div>
+        <div class="p-12"></div>
 
         <footer id="footer" class="bg-[#896565] text-white text-xl">
             <section class="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between">
@@ -93,7 +136,7 @@
                 </address>
                 <nav class="hidden md:flex flex-col gap-2" aria-label="footer">
                     <a href="#rooms" class="hover:opacity-90">ROOMS</a>
-                    <a href="#contact" class="hover:opacity-90">CONTACT US</a>
+                    <a href="#aboutus" class="hover:opacity-90">ABOUT US</a>
                 </nav>
                 <div class="flex flex-col sm:gap-2">
                     <p class="text-right">Copyright &copy; <span id="year">2024</span></p>
