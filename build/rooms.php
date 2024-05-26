@@ -22,12 +22,16 @@
             });
         });
     </script>
+
 </head>
 
-<body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
+<body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white relative">
+
+        <!-- Overlay div -->
+      <div id="overlay" class="fixed inset-0 bg-black opacity-70 z-50 hidden"></div>
         <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
             <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-                <a href="index.html"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
+                <a href="index.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
                 <div>
                     <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
                         &#9776;
@@ -35,7 +39,7 @@
                     <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
 
                         <a href="rooms.php" class="hover:opacity-70 text-mydefault"> ROOMS</a>
-                        <a href="index.php" class="hover:opacity-70 text-mydefault">CONTACT US</a>
+                        <a href="index.php" class="hover:opacity-70 text-mydefault">ABOUT US</a>
                         <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">ADMIN</a>
                     </nav>
                 </div>
@@ -46,12 +50,12 @@
             <section id="racecover"
                 class="widescreen:section-min-height tallscreen:section-min-height">
 
-                <img src="img/firstfloor.png" class="absolute">
+                <img src="img/csmfirstfloor.png" class="absolute">
                 <div class="relative">
                 
                 <!--First Row Rooms-->
                 <section>
-                    <div class="wrapper">
+                    <div style="margin-top: 57px;" class="wrapper">
                         <div class="icon lab" data-room-key="Room127">
                            <div class="tooltip">
                               ROOM 127
@@ -154,7 +158,7 @@
                 <!--Second Row Rooms-->
 
                 <section>
-                    <div class="wrapper mt-50 ml-70">
+                    <div style="margin-top: 53px;" class="wrapper ml-70">
                         <div class="icon lab">
                            <div class="tooltip">
                               MOLBIO LAB
@@ -308,6 +312,23 @@
         </main>
 
         <div id="room-details" class="mt-10"></div>
+
+    <script>
+    $(document).ready(function(){
+        $('.icon').click(function(){
+            var roomKey = $(this).data('room-key');
+            $.ajax({
+                url: 'fetch_rooms.php',
+                type: 'GET',
+                data: { room_key: roomKey },
+                success: function(response) {
+                    $('#room-details').html(response);
+                    $('#overlay').removeClass('hidden'); // Show overlay
+                }
+            });
+        });
+    });
+    </script>
 
     </body>
 </html>
