@@ -22,7 +22,7 @@ switch ($uname) {
         $name = "ADMIN JULIENE";
         break;
     case "kriirmazo":
-        $name = "ADMIN KRISTIANNA";
+        $name = "ADMIN ISABEL";
         break;
     default:
         $name = "ADMIN";
