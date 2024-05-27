@@ -16,7 +16,7 @@ $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "racedatabase";
-$schedID = $time = $day = $courseID = $profID = $roomNumber = $section = $errMsg = $errMsg1 = $errMsg2 = $addErr = $submitMsg = "";
+$schedID = $time = $day = $courseID = $profID = $roomNumber = $section = $courseErr = $profErr = $roomErr = $errMsg = $addErr = $submitMsg = "";
 
 // Establishing a connection to the database
 $conn = mysqli_connect($host, $user, $pass, $db);
@@ -44,38 +44,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "INSERT INTO roomsched (SchedID, RoomNumber, CourseID, ProfID, Time, Day, Section) VALUES ('$schedID', '$roomNumber', '$courseID', '$profID', '$time', '$day', '$section')";
         if ($conn->query($sql) === TRUE) {
             // echo '<div class="alert alert-success" role="alert" id="newmessage">New Product Added Successfully.</div>';
-            $submitMsg = "Added successfully";
+            $submitMsg = "Added successfully!";
         } 
         else {
             // echo '<div class="alert alert-danger" role="alert">Error: ' . $sql . '<br>' . $conn->error . '</div>';
-            $submitMsg = "Added unsuccessfully";
+            $submitMsg = "Added unsuccessfully!";
         }
     }
     else{
-        if((mysqli_fetch_array($sqlCourse)) == FALSE){
-            $errMsg = "Course, ";
+    
+        if((mysqli_fetch_array($sqlCourse))==FALSE){
+            $courseErr = "X";
         }
-        else{
-            $errMsg = "";
+        if((mysqli_fetch_array($sqlProf))==FALSE){
+            $profErr = "Y";
         }
-        if((mysqli_fetch_array($sqlProf)) == FALSE){
-            $errMsg1 = "Professor";
+        if((mysqli_fetch_array($sqlRoom))==FALSE){
+            $roomErr = "Z";
         }
-        else{
-            $errMsg1 = "";
+        
+        $errMsg = $courseErr.$profErr.$roomErr;
+
+        switch ($errMsg){
+            case "XYZ":
+                $errMsg = "Course, Professor, and Room";
+                break;
+            case "XY":
+                $errMsg = "Course and Professor";
+                break;
+            case "XZ":
+                $errMsg = "Course and Room";
+                break;
+            case "YZ":
+                $errMsg = "Professor and Room";
+                break;
+            case "X":
+                $errMsg = "Course";
+                break;
+            case "Y":
+                $errMsg = "Professor";
+                break;
+            case "Z":
+                $errMsg = "Room";
+                break;
+            default:
+                $errMsg = "";
         }
-        if((mysqli_fetch_array($sqlRoom)) == FALSE){
-            $errMsg2 = ", Room";
-        }
-        else{
-            $errMsg2 = "";
-        }
-        $addErr = "ERROR: $errMsg $errMsg1 $errMsg2 Unknown!";
+        $addErr = "ERROR: ".$errMsg." Unknown!";
     }
     
     // Close the database connection
     $conn->close();
 }
+
 ?>
 
 
@@ -98,6 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2 class="text-4xl font-bold text-slate-800 dark:text-gray-200 mb-8">ADD SCHEDULE</h2>
         <form class="border-[1.5px] border-slate-950 dark:bg-gray-800 shadow-xl rounded-lg p-8 max-w-lg w-full" method="POST" action="add_sched.php">
             <div class="mb-5">
+                <span style="font-style: italic; color: red; font-weight: bold;"><?php echo $addErr;?></span>
+                <span style="font-style: italic; text-align: center; font-weight: bold;"><?php echo $submitMsg;?></span><br>
                 <label for="schedID" class="block mb-2 text-sm font-medium">Schedule ID:</label>
                 <input name="schedID" type="text" id="schedID" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: Room105_sched101" required />
             </div>
@@ -154,8 +177,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input name="idprof" type="text" id="idprof" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" placeholder="Ex: MCSGuillermo" required />
             </div>
 
-        <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $addErr;?></span>
-        <span style="font-style: italic; color: red; font-size: 10px; margin-bottom: -10px;"><?php echo $submitMsg;?></span>
+        
+
 
         <div style="display: flex; justify-content: center;">
             <input style="font-weight: bold;" class="mt-5 w-[45%] bg-gradient-to-br from-red-950 via-red-950 to-yellow-950 text-white p-2.5 rounded-lg hover:bg-gradient-to-br hover:from-red-300 hover:via-red-400 hover:to-yellow-200 cursor-pointer focus:ring-4 focus:ring-red-300" id="type_submit" type="submit" value="ADD SCHEDULE">
