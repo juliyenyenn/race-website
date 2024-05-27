@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         $(document).ready(function(){
             $('.icon').click(function(){
@@ -22,6 +23,16 @@
             });
         });
     </script>
+
+   <style>
+
+      .roomlabel{
+         font-size: 12px; 
+         font-family: "Montserrat";
+         font-weight: bold;
+      }
+
+   </style>
 
 </head>
 
@@ -50,265 +61,301 @@
             <section id="racecover"
                 class="widescreen:section-min-height tallscreen:section-min-height">
 
-                <img src="img/csmfirstfloor.png" class="absolute">
+                <img src="img/firstfloor.png" class="absolute">
                 <div class="relative">
                 
                 <!--First Row Rooms-->
                 <section>
-                    <div style="margin-top: 57px;" class="wrapper">
+                    <div class="wrapper mt-[48px] ml-[-3px]">
                         <div class="icon lab" data-room-key="Room127">
                            <div class="tooltip">
-                              ROOM 127
+                              LAB ROOM
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 127</p>
                     </div>
 
-                    <div class="wrapper ml-10">
+                    <div class="wrapper ml-[17px]">
                         <div class="icon lab" data-room-key="Room126">
                            <div class="tooltip">
-                              ROOM 126
+                              BIOCHEM LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 126</p>
                     </div>
 
-                    <div class="wrapper ml-7">
+                    <div class="wrapper ml-[12px]">
                         <div class="icon lab" data-room-key="Room125">
                            <div class="tooltip">
-                              ROOM 125
+                              DISPENSE ROOM
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 125</p>
                     </div>
 
-                    <div class="wrapper ml-10">
+                    <div class="wrapper ml-[17px]">
                         <div class="icon lab" data-room-key="Room122">
                            <div class="tooltip">
-                              ROOM 122
+                              LAB ROOM
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 122</p>
                     </div>
 
-                    <div class="wrapper ml-18">
+                    <div class="wrapper ml-[35px]">
                         <div class="icon lab" data-room-key="Room120">
                            <div class="tooltip">
-                              ROOM 120
+                              LAB ROOM
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 120</p>
                     </div>
 
-                    <div class="wrapper ml-5">
+                    <div class="wrapper ml-[10px]">
                         <div class="icon lab" data-room-key="Room118">
                            <div class="tooltip">
-                              ROOM 118
+                              PHYSIO LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 118</p>
                     </div>
 
-                    <div class="wrapper ml-50">
+                    <div class="wrapper ml-[103px]">
                         <div class="icon lab" data-room-key="Room112">
                            <div class="tooltip">
-                              ROOM 112
+                              LAB ROOM
                            </div>
-                           <span><i class="fa-solid fa-pen-to-square"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 112</p>
                     </div>
 
-                    <div class="wrapper ml-10">
+                    <div class="wrapper ml-[22px]">
                         <div class="icon lab" data-room-key="Room110">
                            <div class="tooltip">
-                              ROOM 110
+                              LAB ROOM
                            </div>
-                           <span><i class="fa-solid fa-pen-to-square"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 110</p>
                     </div>
 
-                    <div class="wrapper ml-20">
+                    <div class="wrapper ml-[37px]">
                         <div class="icon lab" data-room-key="Room108">
                            <div class="tooltip">
-                              ROOM 108
+                              THESIS LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 108</p>
                     </div>
 
-                    <div class="wrapper ml-10">
+                    <div class="wrapper ml-[13px]">
                         <div class="icon lab" data-room-key="Room106">
                            <div class="tooltip">
-                              ROOM 106
+                              INSTRU. ROOM
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 106</p>
                     </div>
 
-                    <div class="wrapper ml-10">
+                    <div class="wrapper ml-[14px]">
                         <div class="icon lab" data-room-key="Room104">
                            <div class="tooltip">
-                              ROOM 104
+                              GENCHEM LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 104</p>
                     </div>
 
-                    <div class="wrapper ml-7">
+                    <div class="wrapper ml-[7px]">
                         <div class="icon lab" data-room-key="Room102">
                            <div class="tooltip">
-                              ROOM 102
+                              POSTHARV LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 102</p>
                     </div>
 
+            </section>
+
+            <!--Second Row Rooms-->
+
+            <section>
+                    <div class="wrapper mt-[65px] ml-[-5px]">
+                        <div class="icon lab" data-room-key="Room128">
+                           <div class="tooltip">
+                              SCIENCE LAB
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 128</p>
+                        </div>
                     </div>
-                </section>
 
-
-                <!--Second Row Rooms-->
-
-                <section>
-                    <div style="margin-top: 53px;" class="wrapper ml-70">
-                        <div class="icon lab">
+                  <div class="mt-[-165px] ml-[118px]">
+                    <div class="wrapper">
+                        <div class="icon lab" data-room-key="Room125A">
                            <div class="tooltip">
                               MOLBIO LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 125A</p>
                         </div>
                     </div>
+                  </div>
 
-                    <div class="wrapper mt-50 ml-neg10">
-                        <div class="icon lab">
-                           <div class="tooltip">
-                              DISPEN. ROOM
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-50 ml-90">
-                        <div class="icon lab" data-room-key="Room119">
-                           <div class="tooltip">
-                              ROOM 119
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-50 ml-3">
-                        <div class="icon lab" data-room-key="Room117">
-                           <div class="tooltip">
-                              ROOM 117
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-50 ml-25">
-                        <div class="icon lab" data-room-key="Room113">
-                           <div class="tooltip">
-                              ROOM 113
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-50 ml-neg15">
-                        <div class="icon lab" data-room-key="Room111">
-                           <div class="tooltip">
-                              ROOM 111
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="wrapper mt-neg100 ml-neg">
-                        <div class="icon lab" data-room-key="Room128">
-                           <div class="tooltip">
-                              ROOM 128
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-150">
-                        <div class="icon lab" data-room-key="Room121">
-                           <div class="tooltip">
-                              ROOM 121
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-250">
-                        <div class="icon lab">
-                           <div class="tooltip">
-                              FT_DISPEN. ROOM
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-neg20">
-                        <div class="icon lab">
-                           <div class="tooltip">
-                              BIO_DISPEN. ROOM
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-neg8">
-                        <div class="icon lab" data-room-key="Room107">
-                           <div class="tooltip">
-                              ROOM 107
-                           </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-3">
-                        <div class="icon lab" data-room-key="Room105">
-                           <div class="tooltip">
-                              ROOM 105
-                           </div>
-                           <span><i class="fa-solid fa-pen-to-square"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-neg5">
-                        <div class="icon lab" data-room-key="Room103">
-                           <div class="tooltip">
-                              ROOM 103
-                           </div>
-                           <span><i class="fa-solid fa-pen-to-square"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="wrapper mt-neg100 ml-neg">
-                        <div class="icon lab">
-                           <div class="tooltip">
-                              COLD ROOM
-                           </div>
-                           <span><i class="fa-solid fa-temperature-arrow-down"></i></span>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="wrapper mt-neg90 ml-70">
-                        <div class="icon lab">
+                  <div class="mt-[-70px] ml-[125px]">
+                    <div class="wrapper">
+                        <div class="icon lab" data-room-key="Microlab">
                            <div class="tooltip">
                               MICRO LAB
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
                         </div>
                     </div>
-                </section>
+                  </div>
 
-                <section>
-                    <div class="wrapper mt-neg20 ml-30">
+                  <div class="mt-[-185px] ml-[190px]">
+                    <div class="wrapper">
+                        <div class="icon lab" data-room-key="Room124">
+                           <div class="tooltip">
+                              DISPEN. ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 124</p>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-[-125px] ml-[285px]">
+                    <div class="wrapper">
+                        <div class="icon lab" data-room-key="Room121">
+                           <div class="tooltip">
+                              LAB ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 121</p>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-[-155px] ml-[404px]">
+                    <div class="wrapper">
+                        <div class="icon lab" data-room-key="Room119">
+                           <div class="tooltip">
+                              LAB ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 119</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[3px]">
+                        <div class="icon lab" data-room-key="Room117">
+                           <div class="tooltip">
+                              LAB ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 117</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[57px]">
+                        <div class="icon lab" data-room-key="Room113">
+                           <div class="tooltip">
+                              LECTURE ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p style="font-size: 11px;" class="roomlabel text-red-950">RM. 113</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[-15px]">
+                        <div class="icon lab" data-room-key="Room111">
+                           <div class="tooltip">
+                              FOODMICRO LAB
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 111</p>
+                        </div>
+                    </div>
+
+                  </div>
+
+                  <div class="mt-[-125px] ml-[750px]">
+                    <div class="wrapper">
+                        <div class="icon lab" data-room-key="Room109A">
+                           <div class="tooltip">
+                              DISPEN ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p style="font-size: 9.5px;" class="roomlabel text-red-950">RM. 109A</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[-30px]">
+                        <div class="icon lab" data-room-key="Room109B">
+                           <div class="tooltip">
+                              DISPEN ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p style="font-size: 8.5px;" class="roomlabel text-red-950">RM. 109B</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[-10px]">
+                        <div class="icon lab" data-room-key="Room107">
+                           <div class="tooltip">
+                              FOODENG LAB
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 107</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[-2.5px]">
+                        <div class="icon lab" data-room-key="Room105">
+                           <div class="tooltip">
+                              FAC ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 105</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[-11px]">
+                        <div class="icon lab" data-room-key="Room103">
+                           <div class="tooltip">
+                              STOCK ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 103</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper ml-[-8px]">
+                        <div class="icon lab" data-room-key="Room101">
+                           <div class="tooltip">
+                              COLD ROOM
+                           </div>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p class="roomlabel text-red-950">RM. 101</p>
+                        </div>
+                    </div>
+
+                  </div>
+
+                  <div class="wrapper mt-[4px] ml-[65px]">
                         <div class="icon lab" data-room-key="Room132">
                            <div class="tooltip">
-                              ROOM 132
+                              BIOTECH
                            </div>
-                           <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <span><i class="fa-solid fa-flask-vial"></i></span>
+                        <p style="font-size: 10px;" class="roomlabel text-red-950">RM. 132</p>
                         </div>
-                    </div>
-                </section>
+                  </div>
+
+
             </section>
+
+
         </main>
 
         <div id="room-details" class="mt-10"></div>

@@ -32,9 +32,6 @@
             font-weight:bold;
         }
 
-
-
-
     </style>
 
 </head>
@@ -72,7 +69,7 @@
                 <section>
 
                     <div class="wrapper mt-[43px] ml-[115px]">
-                        <div class="icon lab" data-room-key="Room127">
+                        <div class="icon lab" data-room-key="Room226">
                            <div class="tooltip">
                               LECTURE ROOM
                            </div>
@@ -82,7 +79,7 @@
                     </div>
 
                     <div class="wrapper ml-[9px]">
-                        <div class="icon lab" data-room-key="Room127">
+                        <div class="icon lab" data-room-key="Room224">
                            <div class="tooltip">
                              LECTURE ROOM
                            </div>
@@ -92,7 +89,7 @@
                     </div>
 
                     <div class="wrapper ml-[18px]">
-                        <div class="icon lab" data-room-key="Room127">
+                        <div class="icon lab" data-room-key="Room222">
                            <div class="tooltip">
                              LECTURE ROOM
                            </div>
@@ -102,7 +99,7 @@
                     </div>
 
                     <div class="wrapper ml-[350px]">
-                        <div class="icon lab" data-room-key="Room127">
+                        <div class="icon lab" data-room-key="Room208">
                            <div class="tooltip">
                              RESEARCH ROOM
                            </div>
@@ -112,7 +109,7 @@
                     </div>
 
                     <div class="wrapper ml-[22px]">
-                        <div class="icon lab" data-room-key="Room127">
+                        <div class="icon lab" data-room-key="Room206A">
                            <div class="tooltip">
                              LECTURE ROOM
                            </div>
@@ -122,7 +119,7 @@
                     </div>
 
                     <div class="wrapper ml-[20px]">
-                        <div class="icon lab" data-room-key="Room127">
+                        <div class="icon lab" data-room-key="Room206B">
                            <div class="tooltip">
                              LECTURE ROOM
                            </div>
