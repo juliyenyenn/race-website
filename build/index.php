@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/aboutus.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
@@ -31,7 +32,7 @@
             class="widescreen:section-min-height tallscreen:section-min-height">
             <img src="img/homepagecover.gif" class="absolute">
             <div class="p-[75px]">
-                <h1 class="leading-[70px] text-[78px] max-w-[550px] relative poppins-black font-extrabold text-orange-100 drop-shadow-4xl">
+                <h1 class="leading-[70px] text-[78px] max-w-[550px] relative poppins-black font-[900] text-orange-100 drop-shadow-4xl">
                     ROOM AVAILABILITY for CLASSES and EXAMS
                 </h1><br>
                 <p class="text-[17px] max-w-[550px] relative montserrat-black text-orange-100 drop-shadow-4xl mt-12 -mb-10">
@@ -45,18 +46,18 @@
             <h2 class="mt-5 text-4xl font-bold text-center sm:text-5xl mb-14 text-orange-950 dark:text-white">
                 CHECK ROOMS:
             </h2>
-            <ul class="mx-auto list-none my-5 flex flex-col sm:flex-row items-center gap-18">
+            <ul class="list-none my-5 flex flex-col sm:flex-row items-center justify-center gap-36">
                 <!--1st Card-->
-                <a href="rooms.php"><li 
-                    class="opt sm:w-2/3 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 rounded-3xl shadow-xl">
-                    <img src="img/1floor.png" alt="1st Floor" class="w-40p mb-6">
-                    <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">FIRST FLOOR</h3>
+                <a href="rooms.php">
+                    <li class="sm:w-[95%] flex flex-col items-center border border-solid border-slate-900 hover:bg-[#f9f0df] hover:border-orange-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-12 px-24 rounded-3xl shadow-xl">
+                    <img src="img/1floor.png" alt="1st Floor" class="w-52 mb-6">
+                    <h3 class="text-[20px] font-bold text-center mt-2 text-red-950 dark:text-white">FIRST FLOOR</h3>
                 </li></a>
                 <!--2nd Card-->
-                <a href="secondfloor.php"><li 
-                    class="opt sm:w-2/3 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
-                    <img src="img/2floor.png" alt="2nd Floor" class="w-40p mb-6">
-                    <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">SECOND FLOOR</h3>
+                <a href="secondfloor.php">
+                    <li class="sm:w-[95%] flex flex-col items-center border border-solid border-slate-900 hover:bg-[#f9f0df] hover:border-orange-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-12 px-24 rounded-3xl shadow-xl">
+                    <img src="img/2floor.png" alt="2nd Floor" class="w-52 mb-6">
+                    <h3 class="text-[20px] font-bold text-center mt-2 text-red-950 dark:text-white">SECOND FLOOR</h3>
                 </li></a>
 
             </ul>

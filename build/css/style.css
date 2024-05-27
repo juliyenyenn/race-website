@@ -37,13 +37,6 @@
 7. Disable tap highlights on iOS
 */
 
-.opt:hover{
-  border: rgb(69 10 10 / var(--tw-bg-opacity));
-  border-width: 3px;
-  background-color: #f9f0df;
-  border-style: solid;
-}
-
 
 /* CSS for tooltip */
 .wrapper{
