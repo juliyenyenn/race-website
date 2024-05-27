@@ -53,11 +53,11 @@
                     <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">FIRST FLOOR</h3>
                 </li></a>
                 <!--2nd Card-->
-                <li 
+                <a href="secondfloor.php"><li 
                     class="opt sm:w-2/3 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-[#FFFAEF] dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
                     <img src="img/2floor.png" alt="2nd Floor" class="w-40p mb-6">
                     <h3 class="text-[20px] font-bold text-center mt-2 text-slate-900 dark:text-white">SECOND FLOOR</h3>
-                </li>
+                </li></a>
 
             </ul>
         </section>
