@@ -109,7 +109,7 @@
                     </div>
 
                     <div class="wrapper ml-[22px]">
-                        <div class="icon lab" data-room-key="Room206A">
+                        <div class="icon lab" data-room-key="Room206">
                            <div class="tooltip">
                              LECTURE ROOM
                            </div>
@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="wrapper ml-[20px]">
-                        <div class="icon lab" data-room-key="Room206B">
+                        <div class="icon lab" data-room-key="Room206b">
                            <div class="tooltip">
                              LECTURE ROOM
                            </div>
@@ -134,7 +134,7 @@
 
                 <section>
                     <div class="wrapper mt-[-80px] ml-[10px]">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room227">
                            <div class="tooltip">
                               ADV ROOM
                            </div>
@@ -149,7 +149,7 @@
 
                 <section>
                     <div class="wrapper mt-[9px] ml-[10px]">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room228">
                            <div class="tooltip">
                               CMSC LABORATORY
                            </div>
@@ -159,7 +159,7 @@
                     </div>
 
                     <div class="wrapper ml-[93px]">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room225">
                            <div class="tooltip">
                               CMSC LABORATORY
                            </div>
@@ -170,7 +170,7 @@
 
                     <div class="mt-[-155px] ml-[268px]">
                     <div class="wrapper">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room223">
                            <div class="tooltip">
                               LECTURE ROOM
                            </div>
@@ -180,7 +180,7 @@
                     </div>
 
                     <div class="wrapper ml-[-14px]">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room221">
                            <div class="tooltip">
                               LECTURE ROOM
                            </div>
@@ -196,7 +196,7 @@
 
                 <section style="margin-top: -5px;">
                     <div class="wrapper ml-[10px]">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room229">
                            <div class="tooltip">
                               LECTURE ROOM
                            </div>
@@ -207,7 +207,7 @@
                     
                     <div class="mt-[-125px] ml-[192px]">
                     <div class="wrapper">
-                        <div class="icon lab">
+                        <div class="icon lab" data-room-key="Room230">
                            <div class="tooltip">
                               PHYSICS LAB
                            </div>
