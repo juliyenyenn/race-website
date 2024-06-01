@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a style="font-weight: bold; font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
+                    <a style="font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
                 </nav>
             </div>
         </section>
@@ -178,8 +178,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
         
-
-
         <div style="display: flex; justify-content: center;">
             <input style="font-weight: bold;" class="mt-5 w-[45%] bg-gradient-to-br from-red-950 via-red-950 to-yellow-950 text-white p-2.5 rounded-lg hover:bg-gradient-to-br hover:from-red-300 hover:via-red-400 hover:to-yellow-200 cursor-pointer focus:ring-4 focus:ring-red-300" id="type_submit" type="submit" value="ADD SCHEDULE">
         </div>

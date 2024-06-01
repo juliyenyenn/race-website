@@ -4,86 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>RACE | ADD Schedule</title>
+    <title>RACE | UPDATE & DELETE Schedule</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
-    <style>
-        h2 {
-            color: black;
-            font-size: 24px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .addschedule {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        label {
-            color: black;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .input-field {
-            width: 300px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: whitesmoke;
-            color: black;
-        }
-        
-        #type_submit {
-            width: 150px;
-            padding: 10px;
-            background-color:#3D2B1F;
-            color: #F4EEE8;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 30px;
-        }
-        
-        #type_submit:hover {
-            background-color:ForestGreen;
-            color: white;
-        }
-
-        .addsched {
-            font-size: 40px;
-            margin-top: 60px;
-            margin-bottom: 70px;
-        }
-
-        #newmessage {
-            margin-top: 30px;
-            margin-bottom: 35px;
-            text-align: center;
-        }
-
-        .btn-update, .btn-delete {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .btn-update {
-            background-color: #2B6CB0;
-            color: white;
-        }
-
-        .btn-delete {
-            background-color: #EF4444;
-            color: white;
-        }
-    </style>
 </head>
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
     <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
@@ -94,19 +18,27 @@
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a href="add_sched.php" class="hover:opacity-70 text-mydefault">ADD </a>
-                    <a href="updatedelete_sched.php" class="hover:opacity-70 text-mydefault">UPDATE & DELETE </a>
+                    <a style="font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
                 </nav>
             </div>
         </section>
     </header>
 
-    <h2 class="addsched">SEARCH SCHEDULE</h2>
+    <main class="flex flex-col items-center py-10">
+
+    <h2 class="text-4xl font-bold text-slate-800 dark:text-gray-200 mb-8">SEARCH SCHEDULE</h2>
+
     <form class="addschedule max-w-sm mx-auto" method="POST" action="updatedelete_sched.php">
-        <label for="roomnumber">Room Number:</label>
-        <input id="rmnumber" type="text" name="rmnumber" placeholder="Ex: 105, 125a, 210a" required><br>
-        <input id="type_submit" type="submit" name="submit" value="Search Room Number">
-    </form><br><br><br>
+
+        <label for="roomnumber" class="block mb-2 text-sm font-medium">Room Number:</label>
+        <input id="rmnumber" type="text" name="rmnumber" placeholder="Ex: 105, 125a, 210a" class="block w-full p-2.5 rounded-lg border focus:ring-slate-500 focus:border-slate-500" required><br>
+
+        <div style="display: flex; justify-content: center;">
+        <input id="type_submit" type="submit" name="submit" class="font-bold mt-5 w-[105%] bg-gradient-to-br from-red-950 via-red-950 to-yellow-950 text-white p-2.5 rounded-lg hover:bg-gradient-to-br hover:from-red-300 hover:via-red-400 hover:to-yellow-200 cursor-pointer focus:ring-4 focus:ring-red-300" value="SEARCH ROOM NUMBER">
+        </div>
+
+    </form><br><br>
+
     <div class="container my-5">
         <table class="table">
         <?php
@@ -192,6 +124,7 @@
         ?>
         </table>
     </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
