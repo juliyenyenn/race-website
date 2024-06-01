@@ -196,7 +196,7 @@
                               MOLBIO LAB
                            </div>
                         <span><i class="fa-solid fa-flask-vial"></i></span>
-                        <p class="roomlabel text-red-950">RM. 125A</p>
+                        <p class="roomlabel text-red-950">RM. 125a</p>
                         </div>
                     </div>
                   </div>
@@ -281,7 +281,7 @@
 
                   <div class="mt-[-125px] ml-[750px]">
                     <div class="wrapper">
-                        <div class="icon lab" data-room-key="Room109A">
+                        <div class="icon lab" data-room-key="Room109a">
                            <div class="tooltip">
                               DISPEN ROOM
                            </div>
@@ -291,7 +291,7 @@
                     </div>
 
                     <div class="wrapper ml-[-30px]">
-                        <div class="icon lab" data-room-key="Room109B">
+                        <div class="icon lab" data-room-key="Room109b">
                            <div class="tooltip">
                               DISPEN ROOM
                            </div>
