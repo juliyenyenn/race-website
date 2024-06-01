@@ -61,7 +61,7 @@
                 </li></a>
 
             </ul>
-        </section>
+        </section><br><br>
 
         <hr class="mx-auto bg-gray-500 h-[1.5px]  dark:bg-white w-1/2">
 
@@ -71,12 +71,12 @@
             <div class="container">
             <div class="header">
             <h2 class="mb-12 text-4xl font-bold text-center sm:text-5xl text-orange-950 dark:text-white">
-                ABOUT US
+                OUR TEAM
             </h2>
             </div>
             <div class="sub-container">
                 <div class="teams">
-                    <img src="img/juliene.jpg" alt="">
+                    <img src="img/juliene1.jpg" alt="">
                     <div class="name">Juliene Airen Bontilao</div>
                     <div class="desig">Front-end Developer</div>
                     <div class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore quam
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="teams">
-                    <img src="img/gracie.jpg" alt="">
+                    <img src="img/gracie1.jpg" alt="">
                     <div class="name">Gracie Anne Abot </div>
                     <div class="desig">Back-end Developer</div>
                     <div class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore quam

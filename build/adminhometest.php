@@ -30,20 +30,28 @@ switch ($uname) {
 ?>
 
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
-    <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
-        <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-            <a href="adminhometest.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
-            <div>
-                <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
-                    &#9776;
-                </button>
-                <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a style="font-weight: bolder; font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
-                </nav>
-            </div>
-        </section>
-        
-    </header>
+
+        <div id="overlay" class="fixed inset-0 bg-black opacity-70 z-50 hidden"></div>
+         <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
+            <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+               <a href="adminhometest.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
+               <div>
+                     <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
+                        &#9776;
+                     </button>
+                     <nav class="hidden sm:block space-x-16 text-base montserrat-black relative" aria-label="main">
+                        <div class="group inline-block relative">
+                           <a class="hover:opacity-70 text-mydefault py-2" style="cursor: pointer;">ROOMS</a>
+                           <div class="absolute hidden group-hover:block bg-white text-black mt-0 shadow-xl">
+                                 <a href="adminroompage1.php" class="block px-6 py-3 hover:bg-red-100 font-[600]">1st&nbsp;FLOOR</a>
+                                 <a href="adminroompage2.php" class="block px-6 py-3 hover:bg-red-100 font-[600]">2nd&nbsp;FLOOR</a>
+                           </div>
+                        </div>
+                        <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT</a>
+                     </nav>
+               </div>
+            </section>
+         </header>
 
     <section style="font-family: Montserrat;" id="racecover"
     class="widescreen:section-min-height tallscreen:section-min-height">

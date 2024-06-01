@@ -55,6 +55,30 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+function renderMessageTable($message) {
+    echo "<div style='margin-top:-42%'>
+            <div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
+                <table class='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
+                    <thead class='font-[Montserrat] text-xs text-gray-700 uppercase bg-[#FFFAEF] dark:bg-gray-700 dark:text-gray-400'>
+                        <tr>
+                            <th colspan='6' class='font-[Montserrat] px-6 py-4 text-lg font-bold text-center text-gray-900 bg-[#cebfa4] dark:bg-gray-800 dark:text-white relative'>
+                                Schedule Information
+                                <button onclick='closeTable()' class='absolute top-[45%] right-4 transform -translate-y-1/2 text-gray-900 dark:text-white text-3xl p-2 hover:text-red-700'>
+                                    &times;
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='font-[Montserrat] bg-[#FFFAEF] dark:bg-gray-800'>
+                            <td colspan='6' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center'>$message</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>";
+}
+
 if (isset($_GET['room_key'])) {
     $room_key = $conn->real_escape_string($_GET['room_key']);
 
@@ -62,14 +86,14 @@ if (isset($_GET['room_key'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo "<div style='margin-top:-42%'>";
+        echo "<div style='margin-top:-43%'>";
         echo "<div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
-                <table class='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
-                    <thead class='text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
+                <table class='w-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-400'>
+                    <thead class='font-[Montserrat] text-xs text-gray-800 uppercase bg-[#f7ecd9] dark:bg-gray-900 dark:text-gray-400'>
                         <tr>
-                            <th colspan='6' class='px-6 py-4 text-lg font-bold text-center text-gray-900 bg-gray-200 dark:bg-gray-800 dark:text-white relative'>
+                            <th colspan='6' class='font-[Montserrat] px-6 py-4 text-lg font-bold text-center text-gray-900 bg-[#cebfa4] dark:bg-gray-800 dark:text-white relative'>
                             $room_key Schedule Information
-                                <button onclick='closeTable()' class='absolute top-[45%] right-4 transform -translate-y-1/2 text-gray-900 dark:text-white text-3xl p-2 hover:text-red-700'>
+                                <button onclick='closeTable()' class='absolute top-[50%] right-4 transform -translate-y-1/2 text-gray-900 dark:text-white text-[35px] p-2 hover:text-red-700'>
                                     &times;
                                 </button>
                             </th>
@@ -85,7 +109,7 @@ if (isset($_GET['room_key'])) {
                     </thead>
                     <tbody>";
         while($row = $result->fetch_assoc()) {
-            echo "<tr class='bg-white dark:bg-gray-800'>
+            echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
                     <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>" . $row["ExamID"] . "</td>
                     <td class='px-6 py-4'>" . $row["CourseID"] . "</td>
                     <td class='px-6 py-4'>" . $row["ProfID"] . "</td>
@@ -96,12 +120,13 @@ if (isset($_GET['room_key'])) {
         }
         echo "</tbody>
                 </table>
-              </div>";
+              </div>
+            </div>";
     } else {
-        echo "<p class='text-gray-700 dark:text-gray-400'>No results found for room key $room_key.</p>";
+        renderMessageTable("No results found for room $room_key.");
     }
 } else {
-    echo "<p class='text-gray-700 dark:text-gray-400'>No room key provided.</p>";
+    renderMessageTable("No room key provided.");
 }
 
 $conn->close();
@@ -110,6 +135,7 @@ $conn->close();
 <script>
 function closeTable() {
     document.getElementById('schedule-table').style.display = 'none';
+    $('#overlay').addClass('hidden'); // Hide overlay
 }
 
 function adjustFontSize() {
@@ -128,13 +154,6 @@ window.addEventListener('load', () => {
     document.getElementById('schedule-table').style.opacity = '1'; // Trigger animation
 });
 window.addEventListener('resize', adjustFontSize);
-
-
-function closeTable() {
-    document.getElementById('schedule-table').style.display = 'none';
-    $('#overlay').addClass('hidden'); // Hide overlay
-}
-
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

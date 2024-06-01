@@ -43,12 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(mysqli_num_rows($sqlCourse) > 0 && mysqli_num_rows($sqlProf) > 0 && mysqli_num_rows($sqlRoom) > 0){
         $sql = "INSERT INTO roomsched (SchedID, RoomNumber, CourseID, ProfID, Time, Day, Section) VALUES ('$schedID', '$roomNumber', '$courseID', '$profID', '$time', '$day', '$section')";
         if ($conn->query($sql) === TRUE) {
-            // echo '<div class="alert alert-success" role="alert" id="newmessage">New Product Added Successfully.</div>';
-            $submitMsg = "Added successfully!";
+            $submitMsg = "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative my-4' role='alert'>Added successfully!</div>";
         } 
         else {
-            // echo '<div class="alert alert-danger" role="alert">Error: ' . $sql . '<br>' . $conn->error . '</div>';
-            $submitMsg = "Added unsuccessfully!";
+            $submitMsg = "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative my-4' role='alert'>Added unsuccessfully!</div>";
         }
     }
     else{
@@ -90,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             default:
                 $errMsg = "";
         }
-        $addErr = "ERROR: ".$errMsg." Unknown!";
+        $addErr = "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative my-4' role='alert'>ERROR: ".$errMsg." Unknown!</div>";
     }
     
     // Close the database connection
@@ -101,22 +99,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 <body class="min-h-screen bg-[#FFFAEF] dark:bg-black dark:text-white">
-    <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
-        <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-            <a href="adminhometest.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
-            <div>
-                <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
-                    &#9776;
-                </button>
-                <nav class="hidden sm:block space-x-16 text-base montserrat-black" aria-label="main">
-                    <a style="font-size:18px" href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT </a>
-                </nav>
-            </div>
-        </section>
-    </header>
 
-    <main class="flex flex-col items-center py-10">
-        <h2 class="text-4xl font-bold text-slate-800 dark:text-gray-200 mb-8">ADD SCHEDULE</h2>
+        <div id="overlay" class="fixed inset-0 bg-black opacity-70 z-50 hidden"></div>
+         <header class="bg-red-950 text-amber-100 sticky top-0 z-10">
+            <section class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+               <a href="adminhometest.php"><img src="img/logobeige.png" class="size-32 mx-auto -mt-11 -mb-11" alt="LOGO"></a>
+               <div>
+                     <button id="mobile-open-button" class="text-2xl sm:hidden focus:outline-none">
+                        &#9776;
+                     </button>
+                     <nav class="hidden sm:block space-x-16 text-base montserrat-black relative" aria-label="main">
+                        <div class="group inline-block relative">
+                           <a class="hover:opacity-70 text-mydefault py-2" style="cursor: pointer;">ROOMS</a>
+                           <div class="absolute hidden group-hover:block bg-white text-black mt-0 shadow-xl">
+                                 <a href="adminroompage1.php" class="block px-6 py-3 hover:bg-red-100 font-[600] text-red-950">1st&nbsp;FLOOR</a>
+                                 <a href="adminroompage2.php" class="block px-6 py-3 hover:bg-red-100 font-[600] text-red-950">2nd&nbsp;FLOOR</a>
+                           </div>
+                        </div>
+                        <div class="group inline-block relative">
+                           <a class="hover:opacity-70 text-mydefault py-2" style="cursor: pointer;">OPTIONS</a>
+                           <div class="absolute hidden group-hover:block bg-white text-black mt-0 shadow-xl">
+                                 <a href="add_sched.php" class="block px-6 py-3 hover:bg-red-100 font-[600] text-red-950">Add&nbsp;Schedule</a>
+                                 <a href="updatedelete_sched.php" class="block px-6 py-3 hover:bg-red-100 font-[600] text-red-950">Update&nbsp;&&nbsp;Delete Schedule</a>
+                           </div>
+                        </div>
+                        <a href="adminlogin.php" class="hover:opacity-70 text-mydefault">LOG OUT</a>
+                     </nav>
+               </div>
+            </section>
+         </header>
+
+    <main class="flex flex-col items-center py-10 font-[Montserrat]">
+        <h2 class="text-4xl font-bold text-red-950 dark:text-gray-200 mb-8">ADD SCHEDULE</h2>
         <form class="border-[1.5px] border-slate-950 dark:bg-gray-800 shadow-xl rounded-lg p-8 max-w-lg w-full" method="POST" action="add_sched.php">
             <div class="mb-5">
                 <span style="font-style: italic; color: red; font-weight: bold;"><?php echo $addErr;?></span>
@@ -179,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         
         <div style="display: flex; justify-content: center;">
-            <input style="font-weight: bold;" class="mt-5 w-[45%] bg-gradient-to-br from-red-950 via-red-950 to-yellow-950 text-white p-2.5 rounded-lg hover:bg-gradient-to-br hover:from-red-300 hover:via-red-400 hover:to-yellow-200 cursor-pointer focus:ring-4 focus:ring-red-300" id="type_submit" type="submit" value="ADD SCHEDULE">
+            <input class="text-[17px] font-bold mt-5 w-[40%] border-[3px] border-red-950 text-red-950 hover:text-white p-2 rounded-lg hover:bg-red-950 cursor-pointer" id="type_submit" type="submit" value="ADD SCHEDULE">
         </div>
 
     </form>
