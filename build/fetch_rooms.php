@@ -79,6 +79,21 @@ function renderMessageTable($message) {
           </div>";
 }
 
+function timeToMinutes($time) {
+    $parts = explode(':', $time);
+    $hours = intval($parts[0]);
+    $minutes = intval($parts[1]);
+
+    // Convert to 24-hour format
+    if (strpos($time, 'PM') !== false && $hours != 12) {
+        $hours += 12;
+    } elseif (strpos($time, 'AM') !== false && $hours == 12) {
+        $hours = 0;
+    }
+
+    return $hours * 60 + $minutes;
+}
+
 if (isset($_GET['room_key'])) {
     $room_key = $conn->real_escape_string($_GET['room_key']);
 
@@ -99,6 +114,11 @@ if (isset($_GET['room_key'])) {
 
             $schedule[$time][$day] = $course_info;
         }
+
+        // Sort schedule by time
+        uksort($schedule, function($a, $b) {
+            return timeToMinutes($a) - timeToMinutes($b);
+        });
 
         echo "<div style='margin-top:-43%'>";
         echo "<div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
@@ -149,6 +169,7 @@ if (isset($_GET['room_key'])) {
 
 $conn->close();
 ?>
+
 
 <script>
 function closeTable() {
