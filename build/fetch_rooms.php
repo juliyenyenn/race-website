@@ -101,24 +101,45 @@ if (isset($_GET['room_key'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $schedule = [];
+        $schedule = [
+            "7:00-8:30 AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "8:30-10:00 AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "10:00-11:30 AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "11:30-1:00 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "1:00-2:30 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "2:30-4:00 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "4:00-5:30 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "5:30-7:00 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""]
+        ];
 
         while($row = $result->fetch_assoc()) {
             $time = $row["Time"];
             $day = $row["Day"];
             $course_info = "<b>". $row["CourseID"] . "</b>" . "<br>" . $row["ProfID"] . "<br>" . $row["Section"];
 
-            if (!isset($schedule[$time])) {
-                $schedule[$time] = ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""];
+            // Determine the start and end time in minutes
+            list($start_time, $end_time) = explode('-', $time);
+            $start_minutes = timeToMinutes($start_time);
+            $end_minutes = timeToMinutes($end_time);
+
+            // Assign course info to the correct time slots
+            foreach ($schedule as $slot => &$days) {
+                list($slot_start, $slot_end) = explode('-', $slot);
+                $slot_start_minutes = timeToMinutes($slot_start);
+                $slot_end_minutes = timeToMinutes($slot_end);
+
+                if ($start_minutes >= $slot_start_minutes && $start_minutes < $slot_end_minutes) {
+                    $days[$day] = $course_info;
+                    if ($end_minutes > $slot_end_minutes) {
+                        $next_slot_minutes = $slot_end_minutes + 90;
+                        $next_slot_time = sprintf('%02d:%02d-%02d:%02d', floor($next_slot_minutes / 60), $next_slot_minutes % 60, floor(($next_slot_minutes + 90) / 60), ($next_slot_minutes + 90) % 60);
+                        if (isset($schedule[$next_slot_time])) {
+                            $schedule[$next_slot_time][$day] = $course_info;
+                        }
+                    }
+                }
             }
-
-            $schedule[$time][$day] = $course_info;
         }
-
-        // Sort schedule by time
-        uksort($schedule, function($a, $b) {
-            return timeToMinutes($a) - timeToMinutes($b);
-        });
 
         echo "<div style='margin-top:-43%'>";
         echo "<div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
@@ -147,6 +168,7 @@ if (isset($_GET['room_key'])) {
         foreach ($schedule as $time => $days) {
             echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
                     <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>$time</td>
+                    <td class
                     <td class='px-6 py-4'>{$days['Monday']}</td>
                     <td class='px-6 py-4'>{$days['Tuesday']}</td>
                     <td class='px-6 py-4'>{$days['Wednesday']}</td>
@@ -170,11 +192,9 @@ if (isset($_GET['room_key'])) {
 $conn->close();
 ?>
 
-
 <script>
 function closeTable() {
     document.getElementById('schedule-table').style.display = 'none';
-    $('#overlay').addClass('hidden'); // Hide overlay
 }
 
 function adjustFontSize() {
