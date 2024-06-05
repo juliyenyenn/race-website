@@ -14,7 +14,7 @@
             transform: scale(0.8);
             opacity: 0;
             animation: growIn 0.5s forwards;
-            max-width: 75%;
+            max-width: 77%;
         }
         .table-container table {
             width: 100%;
