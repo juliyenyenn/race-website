@@ -61,7 +61,7 @@ function renderMessageTable($message) {
                 <table class='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
                     <thead class='font-[Montserrat] text-xs text-gray-700 uppercase bg-[#FFFAEF] dark:bg-gray-700 dark:text-gray-400'>
                         <tr>
-                            <th colspan='6' class='font-[Montserrat] px-6 py-4 text-lg font-bold text-center text-gray-900 bg-[#cebfa4] dark:bg-gray-800 dark:text-white relative'>
+                            <th colspan='4' class='font-[Montserrat] px-6 py-4 text-lg font-bold text-center text-gray-900 bg-[#cebfa4] dark:bg-gray-800 dark:text-white relative'>
                                 Schedule Information
                                 <button onclick='closeTable()' class='absolute top-[45%] right-4 transform -translate-y-1/2 text-gray-900 dark:text-white text-3xl p-2 hover:text-red-700'>
                                     &times;
@@ -71,7 +71,7 @@ function renderMessageTable($message) {
                     </thead>
                     <tbody>
                         <tr class='font-[Montserrat] bg-[#FFFAEF] dark:bg-gray-800'>
-                            <td colspan='6' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center'>$message</td>
+                            <td colspan='4' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center'>$message</td>
                         </tr>
                     </tbody>
                 </table>
@@ -102,14 +102,14 @@ if (isset($_GET['room_key'])) {
 
     if ($result->num_rows > 0) {
         $schedule = [
-            "7:00-8:30 AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "8:30-10:00 AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "10:00-11:30 AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "11:30-1:00 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "1:00-2:30 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "2:30-4:00 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "4:00-5:30 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "5:30-7:00 PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""]
+            "7:00AM-8:30AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "8:30AM-10:00AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "10:00AM-11:30AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "11:30AM-1:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday"=> "", "Friday" => "", "Saturday" => ""],
+            "1:00PM-2:30PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "2:30PM-4:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "4:00PM-5:30PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+            "5:30PM-7:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""]
         ];
 
         while($row = $result->fetch_assoc()) {
@@ -127,18 +127,15 @@ if (isset($_GET['room_key'])) {
                 list($slot_start, $slot_end) = explode('-', $slot);
                 $slot_start_minutes = timeToMinutes($slot_start);
                 $slot_end_minutes = timeToMinutes($slot_end);
-
+            
                 if ($start_minutes >= $slot_start_minutes && $start_minutes < $slot_end_minutes) {
-                    $days[$day] = $course_info;
-                    if ($end_minutes > $slot_end_minutes) {
-                        $next_slot_minutes = $slot_end_minutes + 90;
-                        $next_slot_time = sprintf('%02d:%02d-%02d:%02d', floor($next_slot_minutes / 60), $next_slot_minutes % 60, floor(($next_slot_minutes + 90) / 60), ($next_slot_minutes + 90) % 60);
-                        if (isset($schedule[$next_slot_time])) {
-                            $schedule[$next_slot_time][$day] = $course_info;
-                        }
+                    if (empty($days[$day])) {
+                        $days[$day] = $course_info;
                     }
                 }
             }
+            
+
         }
 
         echo "<div style='margin-top:-43%'>";
@@ -158,39 +155,42 @@ if (isset($_GET['room_key'])) {
                             <th scope='col' class='px-6 py-3'>Monday</th>
                             <th scope='col' class='px-6 py-3'>Tuesday</th>
                             <th scope='col' class='px-6 py-3'>Wednesday</th>
+                           
                             <th scope='col' class='px-6 py-3'>Thursday</th>
                             <th scope='col' class='px-6 py-3'>Friday</th>
                             <th scope='col' class='px-6 py-3'>Saturday</th>
-                        </tr>
-                    </thead>
-                    <tbody>";
+                            </tr>
+                            </thead>
+                            <tbody>";
+                            
+                            foreach ($schedule as $time => $days) {
+                                echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
+                                        <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>$time</td>
+                                        <td class='px-6 py-4'>{$days['Monday']}</td>
+                                        <td class='px-6 py-4'>{$days['Tuesday']}</td>
+                                        <td class='px-6 py-4'>{$days['Wednesday']}</td>
+                                        <td class='px-6 py-4'>{$days['Thursday']}</td>
+                                        <td class='px-6 py-4'>{$days['Friday']}</td>
+                                        <td class='px-6 py-4'>{$days['Saturday']}</td>
+                                    </tr>";
+                            }
+                            
+                            echo "</tbody>
+                                    </table>
+                                  </div>
+                                </div>";
+                            } else {
+                                renderMessageTable("No results found for room $room_key.");
+                            }
+                            } else {
+                                renderMessageTable("No room key provided.");
+                            }
+                            
+                            $conn->close();
+                            ?>
+                            
 
-        foreach ($schedule as $time => $days) {
-            echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
-                    <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>$time</td>
-                    <td class
-                    <td class='px-6 py-4'>{$days['Monday']}</td>
-                    <td class='px-6 py-4'>{$days['Tuesday']}</td>
-                    <td class='px-6 py-4'>{$days['Wednesday']}</td>
-                    <td class='px-6 py-4'>{$days['Thursday']}</td>
-                    <td class='px-6 py-4'>{$days['Friday']}</td>
-                    <td class='px-6 py-4'>{$days['Saturday']}</td>
-                </tr>";
-        }
 
-        echo "</tbody>
-                </table>
-              </div>
-            </div>";
-    } else {
-        renderMessageTable("No results found for room $room_key.");
-    }
-} else {
-    renderMessageTable("No room key provided.");
-}
-
-$conn->close();
-?>
 
 <script>
 function closeTable() {
