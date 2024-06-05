@@ -105,7 +105,6 @@ function timeToMinutes($time) {
     }
 }
 
-
 function minutesToTime($minutes) {
     $hours = intdiv($minutes, 60);
     $mins = $minutes % 60;
@@ -144,29 +143,38 @@ if (isset($_GET['room_key'])) {
             $course_info = "<b>". $row["CourseID"] . "</b>" . "<br><span class='profid'>" . $row["ProfID"] . "</span><br>" . $row["Section"];
 
             // Determine the start and end time in minutes
-            list($start_time, $end_time) = explode('-', $time);
-            $start_minutes = timeToMinutes($start_time);
-            $end_minutes = timeToMinutes($end_time);
+            $time_parts = explode('-', $time);
+            if (isset($time_parts[1])) {
+                $start_time = $time_parts[0];
+                $end_time = $time_parts[1];
+                $start_minutes = timeToMinutes($start_time);
+                $end_minutes = timeToMinutes($end_time);
 
-            // Assign course info to the correct time slots
-            foreach ($schedule as $slot => &$days) {
-                list($slot_start, $slot_end) = explode('-', $slot);
-                $slot_start_minutes = timeToMinutes($slot_start);
-                $slot_end_minutes = timeToMinutes($slot_end);
+                // Assign course info to the correct time slots
+                foreach ($schedule as $slot => &$days) {
+                    $slot_parts = explode('-', $slot);
 
-                if ($start_minutes < $slot_end_minutes && $end_minutes > $slot_start_minutes) {
-                    if (empty($days[$day])) {
-                        $days[$day] = $course_info;
-                    } else {
-                        $next_slot_end_minutes = $slot_end_minutes;
-                        while ($end_minutes > $next_slot_end_minutes) {
-                            $next_slot = minutesToTime($next_slot_end_minutes) . '-' . minutesToTime($next_slot_end_minutes + 90);
-                            if (isset($schedule[$next_slot])) {
-                                if (empty($schedule[$next_slot][$day])) {
-                                    $schedule[$next_slot][$day] = $course_info;
+                    if (isset($slot_parts[1])) {
+                        $slot_start = $slot_parts[0];
+                        $slot_end = $slot_parts[1];
+                        $slot_start_minutes = timeToMinutes($slot_start);
+                        $slot_end_minutes = timeToMinutes($slot_end);
+
+                        if ($start_minutes < $slot_end_minutes && $end_minutes > $slot_start_minutes) {
+                            if (empty($days[$day])) {
+                                $days[$day] = $course_info;
+                            } else {
+                                $next_slot_end_minutes = $slot_end_minutes;
+                                while ($end_minutes > $next_slot_end_minutes) {
+                                    $next_slot = minutesToTime($next_slot_end_minutes) . '-' . minutesToTime($next_slot_end_minutes + 90);
+                                    if (isset($schedule[$next_slot])) {
+                                        if (empty($schedule[$next_slot][$day])) {
+                                            $schedule[$next_slot][$day] = $course_info;
+                                        }
+                                    }
+                                    $next_slot_end_minutes += 90;
                                 }
                             }
-                            $next_slot_end_minutes += 90;
                         }
                     }
                 }
@@ -191,7 +199,6 @@ if (isset($_GET['room_key'])) {
                         <th scope='col' class='px-6 py-3'>Monday</th>
                         <th scope='col' class='px-6 py-3'>Tuesday</th>
                         <th scope='col' class='px-6 py-3'>Wednesday</th>
-                        <th scope='col' class='px-
                         <th scope='col' class='px-6 py-3'>Thursday</th>
                         <th scope='col' class='px-6 py-3'>Friday</th>
                         <th scope='col' class='px-6 py-3'>Saturday</th>
@@ -202,12 +209,12 @@ if (isset($_GET['room_key'])) {
     foreach ($schedule as $time => $days) {
         echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
                 <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>$time</td>
-                <td class='px-6 py-4'>{$days['Monday']}</td>
-                <td class='px-6 py-4'>{$days['Tuesday']}</td>
-                <td class='px-6 py-4'>{$days['Wednesday']}</td>
-                <td class='px-6 py-4'>{$days['Thursday']}</td>
-                <td class='px-6 py-4'>{$days['Friday']}</td>
-                <td class='px-6 py-4'>{$days['Saturday']}</td>
+                <td class='px-6 py-4'>" . (isset($days['Monday']) ? $days['Monday'] : '') . "</td>
+                <td class='px-6 py-4'>" . (isset($days['Tuesday']) ? $days['Tuesday'] : '') . "</td>
+                <td class='px-6 py-4'>" . (isset($days['Wednesday']) ? $days['Wednesday'] : '') . "</td>
+                <td class='px-6 py-4'>" . (isset($days['Thursday']) ? $days['Thursday'] : '') . "</td>
+                <td class='px-6 py-4'>" . (isset($days['Friday']) ? $days['Friday'] : '') . "</td>
+                <td class='px-6 py-4'>" . (isset($days['Saturday']) ? $days['Saturday'] : '') . "</td>
             </tr>";
     }
 
@@ -249,4 +256,3 @@ window.addEventListener('resize', adjustFontSize);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 </html>
-
