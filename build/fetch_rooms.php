@@ -81,18 +81,26 @@ function renderMessageTable($message) {
 
 function timeToMinutes($time) {
     $parts = explode(':', $time);
-    $hours = intval($parts[0]);
-    $minutes = intval($parts[1]);
 
-    // Convert to 24-hour format
-    if (strpos($time, 'PM') !== false && $hours != 12) {
-        $hours += 12;
-    } elseif (strpos($time, 'AM') !== false && $hours == 12) {
-        $hours = 0;
+    // Check if $parts has at least two elements before accessing index 1
+    if (count($parts) >= 2) {
+        $hours = intval($parts[0]);
+        $minutes = intval($parts[1]);
+
+        // Convert to 24-hour format
+        if (strpos($time, 'PM') !== false && $hours != 12) {
+            $hours += 12;
+        } elseif (strpos($time, 'AM') !== false && $hours == 12) {
+            $hours = 0;
+        }
+
+        return $hours * 60 + $minutes;
+    } else {
+        // Handle case where $parts doesn't have enough elements
+        return 0; // Or any default value as needed
     }
-
-    return $hours * 60 + $minutes;
 }
+
 
 function minutesToTime($minutes) {
     $hours = intdiv($minutes, 60);
@@ -114,18 +122,18 @@ if (isset($_GET['room_key'])) {
     $sql = "SELECT ExamID, CourseID, ProfID, Time, Day, Section FROM roomsched WHERE SchedID LIKE '$room_key%'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        $schedule = [
-            "7:00AM-8:30AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "8:30AM-10:00AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "10:00AM-11:30AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "11:30AM-1:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "1:00PM-2:30PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "2:30PM-4:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "4:00PM-5:30PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
-            "5:30PM-7:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""]
-        ];
+    $schedule = [
+        "7:00AM-8:30AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "8:30AM-10:00AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "10:00AM-11:30AM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "11:30AM-1:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "1:00PM-2:30PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "2:30PM-4:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "4:00PM-5:30PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""],
+        "5:30PM-7:00PM" => ["Monday" => "", "Tuesday" => "", "Wednesday" => "", "Thursday" => "", "Friday" => "", "Saturday" => ""]
+    ];
 
+    if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $time = $row["Time"];
             $day = $row["Day"];
@@ -160,50 +168,49 @@ if (isset($_GET['room_key'])) {
                 }
             }
         }
-
-        echo "<div style='margin-top:-43%'>";
-        echo "<div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
-                <table class='w-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-400'>
-                    <thead class='font-[Montserrat] text-xs text-gray-800 uppercase bg-[#f7ecd9] dark:bg-gray-900 dark:text-gray-400'>
-                        <tr>
-                            <th colspan='7' class='font-[Montserrat] px-6 py-4 text-lg font-bold text-center text-gray-900 bg-[#cebfa4] dark:bg-gray-800 dark:text-white relative'>
-                            $room_key Schedule Information
-                                <button onclick='closeTable()' class='absolute top-[50%] right-4 transform -translate-y-1/2 text-gray-900 dark:text-white text-[35px] p-2 hover:text-red-700'>
-                                    &times;
-                                </button>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope='col' class='px-6 py-3'>Time</th>
-                            <th scope='col' class='px-6 py-3'>Monday</th>
-                            <th scope='col' class='px-6 py-3'>Tuesday</th>
-                            <th scope='col' class='px-6 py-3'>Wednesday</th>
-                            <th scope='col' class='px-6 py-3'>Thursday</th>
-                            <th scope='col' class='px-6 py-3'>Friday</th>
-                            <th scope='col' class='px-6 py-3'>Saturday</th>
-                        </tr>
-                    </thead>
-                    <tbody>";
-
-        foreach ($schedule as $time => $days) {
-            echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
-                    <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>$time</td>
-                    <td class='px-6 py-4'>{$days['Monday']}</td>
-                    <td class='px-6 py-4'>{$days['Tuesday']}</td>
-                    <td class='px-6 py-4'>{$days['Wednesday']}</td>
-                    <td class='px-6 py-4'>{$days['Thursday']}</td>
-                    <td class='px-6 py-4'>{$days['Friday']}</td>
-                    <td class='px-6 py-4'>{$days['Saturday']}</td>
-                </tr>";
-        }
-
-        echo "</tbody>
-                </table>
-              </div>
-            </div>";
-    } else {
-        renderMessageTable("No results found for room $room_key.");
     }
+
+    echo "<div style='margin-top:-43%'>";
+    echo "<div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
+            <table class='w-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-400'>
+                <thead class='font-[Montserrat] text-xs text-gray-800 uppercase bg-[#f7ecd9] dark:bg-gray-900 dark:text-gray-400'>
+                    <tr>
+                        <th colspan='7' class='font-[Montserrat] px-6 py-4 text-lg font-bold text-center text-gray-900 bg-[#cebfa4] dark:bg-gray-800 dark:text-white relative'>
+                        $room_key Schedule Information
+                            <button onclick='closeTable()' class='absolute top-[50%] right-4 transform -translate-y-1/2 text-gray-900 dark:text-white text-[35px] p-2 hover:text-red-700'>
+                                &times;
+                            </button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope='col' class='px-6 py-3'>Time</th>
+                        <th scope='col' class='px-6 py-3'>Monday</th>
+                        <th scope='col' class='px-6 py-3'>Tuesday</th>
+                        <th scope='col' class='px-6 py-3'>Wednesday</th>
+                        <th scope='col' class='px-
+                        <th scope='col' class='px-6 py-3'>Thursday</th>
+                        <th scope='col' class='px-6 py-3'>Friday</th>
+                        <th scope='col' class='px-6 py-3'>Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+    foreach ($schedule as $time => $days) {
+        echo "<tr class='bg-[#FFFAEF] dark:bg-gray-800 font-[Montserrat]'>
+                <td class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>$time</td>
+                <td class='px-6 py-4'>{$days['Monday']}</td>
+                <td class='px-6 py-4'>{$days['Tuesday']}</td>
+                <td class='px-6 py-4'>{$days['Wednesday']}</td>
+                <td class='px-6 py-4'>{$days['Thursday']}</td>
+                <td class='px-6 py-4'>{$days['Friday']}</td>
+                <td class='px-6 py-4'>{$days['Saturday']}</td>
+            </tr>";
+    }
+
+    echo "</tbody>
+            </table>
+          </div>
+        </div>";
 } else {
     renderMessageTable("No room key provided.");
 }
