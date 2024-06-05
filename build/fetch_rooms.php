@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <style>
         .table-container {
-            max-height: 470px;
+            max-height: 550px;
             overflow-y: auto;
             transform: scale(0.8);
             opacity: 0;
@@ -174,7 +174,7 @@ if (isset($_GET['room_key'])) {
         }
     }
 
-    echo "<div style='margin-top:-43%'>";
+    echo "<div style='margin-top:-47%'>";
     echo "<div id='schedule-table' class='relative z-50 overflow-x-auto w-full max-w-4xl mx-auto table-container'>
             <table class='w-full text-sm text-left rtl:text-right text-gray-800 dark:text-gray-400'>
                 <thead class='font-[Montserrat] text-xs text-gray-800 uppercase bg-[#f7ecd9] dark:bg-gray-900 dark:text-gray-400'>
