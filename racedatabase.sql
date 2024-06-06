@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2024 at 12:24 PM
+-- Generation Time: Jun 06, 2024 at 02:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -121,6 +121,7 @@ INSERT INTO `course` (`CourseID`, `CourseTitle`) VALUES
 ('CMSC 200a', 'Undergraduate Thesis I'),
 ('CMSC 200c', 'Undergraduate Thesis III'),
 ('CMSC 28', 'Computer Programming II'),
+('CMSC 56', 'Discrete Mathematical Structure in Computer Scienc'),
 ('CMSC 57', 'Discrete Mathematical Structures in Computer Scien'),
 ('CSMC 200b', 'Undergraduate Thesis II'),
 ('DS 122', 'TBA'),
@@ -533,11 +534,6 @@ CREATE TABLE `roomsched` (
 --
 
 INSERT INTO `roomsched` (`SchedID`, `RoomNumber`, `ExamID`, `CourseID`, `ProfID`, `Time`, `Day`, `Section`) VALUES
-('RAWR', '104', '', 'CMSC 124', 'JHOSantillan', '7:00AM-8:30AM', 'Monday', 'K'),
-('Room101_sched101', '101', '0', '0', '0', '0', 'Monday', '0'),
-('Room102_sched101', '102', '0', '0', '0', '0', 'Monday', '0'),
-('Room103_sched101', '103', '0', '0', '0', '0', 'Monday', '0'),
-('Room104_sched101', '104', '0', '0', '0', '0', 'Monday', '0'),
 ('Room105_sched101', '105', '0', 'BIO 176', 'JCIbanez ', '1:00PM-4:00PM', 'Wednesday', 'RW'),
 ('Room105_sched102', '105', '0', 'BIO 170', 'MAResponte', '8:30AM-10:00AM', 'Tuesday', 'B'),
 ('Room105_sched104', '105', '0', 'MATH 36', 'KPMontajes', '11:30AM-1:00PM', 'Tuesday', 'DL'),
@@ -554,15 +550,8 @@ INSERT INTO `roomsched` (`SchedID`, `RoomNumber`, `ExamID`, `CourseID`, `ProfID`
 ('Room105_sched118', '105', '0', 'MATH 36', 'KPMontajes', '11:30AM-1:00PM', 'Friday', 'DL'),
 ('Room105_sched119', '105', '0', 'DS 45', 'EVGARosero', '1:00PM-2:30PM', 'Friday', 'M'),
 ('Room105_sched120', '105', '0', 'SCIENCE 10', 'CLNanola', '4:00PM-5:30PM', 'Friday', 'O'),
-('Room106_sched101', '106', '0', '0', '0', '0', 'Monday', '0'),
 ('Room107_sched101', '107', '0', 'CHEM 160.1', 'JPFronteras', ' 10:00 AM-4:00 PM', 'Tuesday', 'CDEF-1L'),
 ('Room108_sched101', '108', '0', 'CHEM 160.1', 'NGVFundador', ' 10:00 AM-4:00 PM', 'Thursday', 'CDEF-2L'),
-('Room108_sched102', '108', '0', 'CHEM 160.1', ' JPFronteras', ' 10:00 AM-4:00 PM', 'Friday', 'KLMN-1L'),
-('Room108_sched103', '108', '0', 'CHEM 160.1', ' RGEVillame', '11:30AM-5:30PM', 'Monday', 'TUVWX-1L'),
-('Room108_sched104', '108', '0', 'FST 145', ' MAAlpos', '8:30 AM-11:30 AM', 'Monday', 'L-1L'),
-('Room108_sched105', '108', '0', 'FST 221', ' RGEVillame', '10:00 AM-4:00 PM', 'Wednesday', 'J-1L'),
-('Room109a_sched101', '109a', '0', '0', '0', '0', 'Monday', '0'),
-('Room109b_sched101', '109b', '0', '0', '0', '0', 'Monday', '0'),
 ('Room110_sched102', '110', '0', 'FST 150', 'JNAAlviola', '1:00PM-4:00PM', 'Monday', 'F-1L'),
 ('Room110_sched103', '110', '0', 'FST 150', 'JNAAlviola', '2:30PM-4:00PM', 'Tuesday', 'F'),
 ('Room110_sched104', '110', '0', 'FST 221', 'RGEVillame', '8:30AM-10:00AM', 'Wednesday', 'J'),
@@ -570,7 +559,6 @@ INSERT INTO `roomsched` (`SchedID`, `RoomNumber`, `ExamID`, `CourseID`, `ProfID`
 ('Room110_sched107', '110', '0', 'FST 150', 'JNAAlviola', '2:30PM-4:00PM', 'Thursday', 'F'),
 ('Room110_sched108', '110', '0', 'FST 221', 'RGEVillame', '8:30AM-10:00AM', 'Friday', 'J'),
 ('Room110_sched110', '110', '0', 'FST 141', 'JNAAlviola', '2:30PM-4:00PM', 'Friday', 'N'),
-('Room111_sched101', '111', '0', '0', '0', '0', 'Monday', '0'),
 ('Room112_sched101', '112', '0', 'CHEM 22', 'JHGTolentino', '8:30AM-10:00AM', 'Tuesday', 'B2'),
 ('Room112_sched103', '112', '0', 'CMSC 130', 'JRMCatane', '4:00PM-5:30PM', 'Tuesday', 'O'),
 ('Room112_sched107', '112', '0', 'MATH 26', 'KPMontajes', '4:00PM-5:30PM', 'Wednesday', 'O'),
@@ -578,33 +566,12 @@ INSERT INTO `roomsched` (`SchedID`, `RoomNumber`, `ExamID`, `CourseID`, `ProfID`
 ('Room112_sched109', '112', '0', 'CMSC 130', 'JRMCatane', '1:00PM-4:00PM', 'Thursday', 'G-2L'),
 ('Room112_sched110', '112', '0', 'CMSC 130', 'JRMCatane', '4:00PM-5:30PM', 'Thursday', 'O'),
 ('Room112_sched114', '112', '0', 'MATH 26', 'KPMontajes', '4:00PM-5:30PM', 'Friday', 'O'),
-('Room113_sched101', '113', '0', '0', '0', '0', 'Monday', '0'),
 ('Room116_sched101', '116', '0', 'BIO 102', 'CSSMillado', '1:00 PM-4:00 PM', 'Tuesday', 'K-1L'),
 ('Room116_sched102', '116', '0', 'BIO 103', 'VCPDela Torre', '1:00 PM-4:00 PM', 'Thursday', 'J-1L'),
 ('Room116_sched103', '116', '0', 'BIO 110', 'VCPDela Torre', '10:00 AM-1:00 PM', 'Tuesday', 'B-1L'),
 ('Room116_sched104', '116', '0', 'BIO 110', 'VCPDela Torre', '1:00 PM-4:00 PM', 'Wednesday', 'B-2L'),
 ('Room116_sched105', '116', '0', 'BIO 110', 'VCPDela Torre', '10:00 AM-1:00 PM', 'Wednesday', 'B-3L'),
-('Room117_sched101', '117', '0', '0', '0', '0', 'Monday', '0'),
-('Room118_sched101', '118', '0', '0', '0', '0', 'Monday', '0'),
 ('Room119_sched101', '119', '0', 'BIO 115', 'JCIbanez', '4:00 PM-7:00 PM', 'Monday', 'RS-1L'),
-('Room119_sched102', '119', '0', 'BIO 143', ' JECMijares', '10:00 AM-1:00 PM', 'Tuesday', 'J-1L'),
-('Room119_sched103', '119', '0', 'BIO 143', ' JECMijares', '10:00 AM-1:00 PM', 'Thursday', 'J-1L'),
-('Room119_sched104', '119', '0', 'BIO 143', ' JECMijares', '10:00 AM-1:00 PM', 'Wednesday', 'J-3L'),
-('Room119_sched105', '119', '0', 'BIO 143', ' JECMijares', '10:00 AM-1:00 PM', 'Friday', 'J-3L'),
-('Room119_sched106', '119', '0', 'BIO 144', ' JECMijares', '1:00 PM-4:00 PM', 'Friday', 'UV-1L'),
-('Room119_sched107', '119', '0', 'BIO 60', ' AFMRaganas', '1:00 PM-4:00 PM', 'Tuesday', 'G-1L'),
-('Room119_sched108', '119', '0', 'BIO 61', ' AFMRaganas', '1:00 PM-4:00 PM', 'Wednesday', 'G-2L'),
-('Room119_sched109', '119', '0', 'BIO 62', ' AFMRaganas', '1:00 PM-4:00 PM', 'Thursday', 'G-3L'),
-('Room120_sched101', '120', '0', '0', '0', '0', 'Monday', '0'),
-('Room121_sched101', '121', '0', '0', '0', '0', 'Monday', '0'),
-('Room122_sched101', '122', '0', '0', '0', '0', 'Monday', '0'),
-('Room124_sched101', '124', '0', '0', '0', '0', '0', '0'),
-('Room125_sched101', '125', '0', '0', '0', '0', 'Monday', '0'),
-('Room126_sched101', '126', '0', '0', '0', '0', 'Monday', '0'),
-('Room127_sched101', '127', '0', '0', '0', '0', 'Monday', '0'),
-('Room128_sched101', '128', '0', '0', '0', '0', 'Monday', '0'),
-('Room132_sched101', '132', '0', '0', '0', '0', 'Monday', '0'),
-('Room206b_sched101', '206b', '0', '0', '0', '0', '0', '0'),
 ('Room206b_sched102', '206b', '', 'CMSC 56', 'MCSGuillermo', '2:30PM-4:00PM', 'Tuesday', 'JK'),
 ('Room206_sched101', '206a', '0', 'STS 1', 'JEAcosta', '8:30AM-11:30AM', 'Monday', 'RS'),
 ('Room206_sched102', '206a', '0', 'BIO 144', 'VCPDela Torre', '1:00PM-4:00PM', 'Monday', 'UV'),
@@ -681,12 +648,6 @@ INSERT INTO `roomsched` (`SchedID`, `RoomNumber`, `ExamID`, `CourseID`, `ProfID`
 ('Room222_sched119', '222', '0', 'CMSC 28', 'VBCalag', '10:00AM-11:30AM', 'Friday', 'O'),
 ('Room222_sched120', '222', '0', 'PHYS 13', 'MUUsares', '11:30AM-4:00PM', 'Friday', 'O-3L'),
 ('Room223_sched101', '223', '0', 'CMSC 124', 'JHOSantillan', ' 7:00 AM-10:00 AM', 'Tuesday', 'C-1L'),
-('Room223_sched102', '223', '0', 'CMSC 127', ' MCSGuillermo', ' 7:00 AM-10:00 AM', 'Wednesday', 'D-1L'),
-('Room223_sched103', '223', '0', 'CMSC 127', ' MCSGuillermo', ' 7:00 AM-10:00 AM', 'Friday', 'D-2L'),
-('Room223_sched104', '223', '0', 'CMSC 183', ' MCSGuillermo', '1:00 PM-4:00 PM', 'Wednesday', 'E-1L'),
-('Room223_sched105', '223', '0', 'CMSC 183', ' MCSGuillermo', '1:00 PM-4:00 PM', 'Friday', 'E-2L'),
-('Room223_sched106', '223', '0', 'DS 57', ' ARMesa-Satina', ' 10:00 AM-1:00 PM', 'Tuesday', 'E-1L'),
-('Room223_sched107', '223', '0', 'DS 57', ' ARMesa-Satina', '8:00 AM-11:00 AM', 'Thursday', 'E-2L'),
 ('Room224_sched101', '224', '0', 'BIO 115', 'LEDGamalo', '8:30AM-10:00AM', 'Monday', 'RS'),
 ('Room224_sched103', '224', '0', 'CMSC 124', 'JHOSantillan', '10:00AM-11:30AM', 'Tuesday', 'O'),
 ('Room224_sched104', '224', '0', 'CMSC 127', 'MCSGuillermo', '11:30AM-1:00PM', 'Tuesday', 'O'),
@@ -702,21 +663,6 @@ INSERT INTO `roomsched` (`SchedID`, `RoomNumber`, `ExamID`, `CourseID`, `ProfID`
 ('Room224_sched120', '224', '0', 'CMSC 142', 'CGManliguez', '11:30AM-1:00PM', 'Friday', 'L'),
 ('Room224_sched121', '224', '0', 'MATH 10', 'VBKobayashi', '2:30PM-4:00PM', 'Friday', 'N'),
 ('Room224_sched122', '224', '0', 'CMSC 137', 'JRMCatane', '4:00PM-5:30PM', 'Friday', 'O'),
-('Room225a_sched101', '225a                ', '0', 'STAT 1', ' KBLigue', '1:00 PM-4:00 PM', 'Monday', 'A-1L'),
-('Room225a_sched102', '225a                ', '0', 'STAT 1', ' KBLigue', '4:00 PM-7:00 PM', 'Monday', 'D-3L'),
-('Room225a_sched103', '225a                ', '0', 'STAT 1', ' KBLigue', '10:00 AM-1:00 PM', 'Tuesday', 'K-1L'),
-('Room225a_sched104', '225a                ', '0', 'CMSC 124', ' JHOSantillan', '7:00 AM-10:00 AM', 'Thursday', 'C-2L'),
-('Room225a_sched105', '225a                ', '0', 'CMSC 125', ' RTGamot', '7:00 AM-10:00 AM', 'Thursday', 'C-2L'),
-('Room225a_sched106', '225a                ', '0', 'CMSC 125', ' RTGamot', ' 1:00 PM-4:00 PM', 'Wednesday', 'G-1L'),
-('Room225a_sched107', ' 225a               ', '0', 'CMSC 126', ' VBCalag', '7:00 AM-10:00 AM', 'Wednesday', 'B-1L'),
-('Room225a_sched108', '225a                ', '0', 'CMSC 126', ' VBCalag', '7:00 AM-10:00 AM', 'Friday', 'B-2L'),
-('Room225a_sched109', ' 225a               ', '0', 'CMSC 126', ' VBCalag', '1:00 PM-4:00 PM', 'Tuesday', 'B-3L'),
-('Room225a_sched110', '225a                ', '0', 'CMSC 137 ', ' JRMCatane', '1:00 PM-4:00 PM', 'Saturday', 'O-1L'),
-('Room225a_sched111', '225a                ', '0', 'CMSC 137 ', ' JRMCatane', '10:00 AM-1:00 PM', 'Friday', 'O-2L'),
-('Room225a_sched112', '225a                ', '0', 'CMSC 191', ' RTGamot', ' 7:00 AM-10:00 AM', 'Tuesday', 'F1-1L'),
-('Room225a_sched113', '225a                ', '0', 'STAT 1', ' KBLigue', '1:00 PM-4:00 PM', 'Monday', 'A-1L'),
-('Room225a_sched114', '225a                ', '0', 'STAT 1', ' KBLigue', '4:00 PM-7:00 PM', 'Monday', 'D-3L'),
-('Room225a_sched115', ' 225a               ', '0', 'STAT 1', ' KBLigue', '10:00 AM-1:00 PM', 'Tuesday', 'K-1L'),
 ('Room226_sched101', '226', '0', 'PHYS 3', 'MUUsares', '11:30AM-1:00PM', 'Monday', 'O'),
 ('Room226_sched102', '226', '0', 'STAT 1', 'KBLigue', '7:00AM-8:30AM', 'Tuesday', 'A'),
 ('Room226_sched104', '226', '0', 'MATH 26', 'EVGARosero', '10:00AM-11:30AM', 'Tuesday', 'C'),
@@ -841,6 +787,21 @@ ALTER TABLE `courseoffering`
 ALTER TABLE `exam`
   ADD CONSTRAINT `CourseID_exam_fk` FOREIGN KEY (`CourseID`) REFERENCES `course` (`CourseID`),
   ADD CONSTRAINT `ProfID_exam` FOREIGN KEY (`ProfID`) REFERENCES `professor` (`ProfID`);
+
+--
+-- Constraints for table `profoffering`
+--
+ALTER TABLE `profoffering`
+  ADD CONSTRAINT `CourseID_schedoffer_fk` FOREIGN KEY (`CourseID`) REFERENCES `course` (`CourseID`),
+  ADD CONSTRAINT `ProfID_schedoffer_fk` FOREIGN KEY (`ProfID`) REFERENCES `professor` (`ProfID`);
+
+--
+-- Constraints for table `roomsched`
+--
+ALTER TABLE `roomsched`
+  ADD CONSTRAINT `CourseID_sched_fk` FOREIGN KEY (`CourseID`) REFERENCES `course` (`CourseID`),
+  ADD CONSTRAINT `ProfID_sched_fk` FOREIGN KEY (`ProfID`) REFERENCES `professor` (`ProfID`),
+  ADD CONSTRAINT `Room_number_sched_fk` FOREIGN KEY (`RoomNumber`) REFERENCES `room` (`RoomNumber`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
